@@ -1,0 +1,43 @@
+########################################################################
+# Le Git Config
+########################################################################
+
+[user]
+	email = desk@kremalicious.com
+	name = Matthias Kretschmann
+[github]
+	user = kremalicious
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = ~/.gitignore_global
+	quotepath = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+[color "branch"]
+	current = green bold
+	local = green
+	remote = red bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red
+[push]
+	#'git push' only the current branch
+	default = current
+[alias]
+	s = status
+	a = !git add . && git status
+	c = commit
+	cm = commit -m
+	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit

@@ -30,8 +30,6 @@ unset MAILCHECK
 
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
-# Android SDK
-PATH="~/Dropbox/Code/android-sdk/tools:~/Dropbox/Code/android-sdk/platform-tools:$PATH"
 
 # ----------------------------------------------------------------------
 #  ALIASES

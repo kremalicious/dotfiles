@@ -28,8 +28,18 @@ unset MAILCHECK
 #  PATH
 # ----------------------------------------------------------------------
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin";
+
+# if these bins exist, then add them to the PATH
+# Android SDK
+ANDROID_HOME="/usr/local/Cellar/android-sdk/r18"
+[ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools";
+
+# add to beginning of PATH so that it always take precedence over /usr/bin
+[ -d "/usr/local/bin" ] && PATH="/usr/local/bin:$PATH";
+[ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH";
+
+export PATH
 
 # ----------------------------------------------------------------------
 #  ALIASES

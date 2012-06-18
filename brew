@@ -1,0 +1,10 @@
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install what we need
+brew install git
+brew install node
+brew install android

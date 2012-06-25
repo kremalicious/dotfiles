@@ -9,10 +9,10 @@
 
 
 # ----------------------------------------------------------------------
-# Load ~/.extra, ~/.bash_prompt
+# Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{extra,bash_prompt}; do
+for file in ~/.{private,bash_prompt}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -31,7 +31,6 @@ unset MAILCHECK
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin";
 
 # if these bins exist, then add them to the PATH
-# Android SDK
 ANDROID_HOME="/usr/local/Cellar/android-sdk/r18"
 [ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools";
 
@@ -51,7 +50,7 @@ alias krlc='ssh kremalicious'
 # Terminal needs more Espresso
 alias esp="open -a Espresso"
 # Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
+alias update='sudo softwareupdate -i -a; sudo gem update --system; sudo gem update; brew update; brew upgrade; npm update -g'
 
 # ----------------------------------------------------------------------
 # LSCOLORS

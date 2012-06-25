@@ -5,7 +5,7 @@
 	
 	Usage: 
 	select as user style sheet in browser
-	or use defaults rules in dotfiles/osx
+	or use defaults write... rules in dotfiles/osx
 */
 
 /* GOOGLE SEARCH
@@ -43,7 +43,8 @@ li[data-global-action="discover"],
    -----------------------------------------*/
 
 /* I don't think that's Fun & Interesting */ 
-div[guidedhelpid="celebritysuggestions"] {
+div[guidedhelpid="celebritysuggestions"],
+div.o6.jea {
 	display: none !important;
 }
 

@@ -1,0 +1,59 @@
+/*
+	#############################
+	CSS rules for a more sane web
+	#############################
+	
+	Usage: 
+	select as user style sheet in browser
+	or use defaults rules in dotfiles/osx
+*/
+
+/* GOOGLE SEARCH
+   -----------------------------------------*/
+
+/* Ads */
+#tads,
+#bottomads {
+	display: none !important;
+}
+
+/* Dude, I'm searching not socialising */
+#gsr #gbu {
+	display: none !important;
+}
+
+/* TWITTER
+   -----------------------------------------*/
+
+/* Nice try, Twitter */
+div.promoted-tweet {
+	display: none !important;
+}
+
+/* Discover menu, Who to follow, Similiar, Trends */
+li[data-global-action="discover"],
+.component[data-component-term="user_recommendations"],
+.component[data-component-term="similar_user_recommendations"],
+.module.trends.component {
+	display: none !important;
+}
+
+
+/* GOOGLE+
+   -----------------------------------------*/
+
+/* I don't think that's Fun & Interesting */ 
+div[guidedhelpid="celebritysuggestions"] {
+	display: none !important;
+}
+
+
+/* STACK OVERFLOW ET AL.
+   -----------------------------------------*/
+
+.ad-container,
+#newsletter-ad,
+#recent-badges,
+.everyonelovesstackoverflow {
+	display: none !important;
+}

@@ -1,5 +1,7 @@
+
 ########################################################################
 # bash_prompt, from @mathiasbynens
+# slightly modified
 # https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
 ########################################################################
 
@@ -56,4 +58,4 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\n\[${BOLD}${MAGENTA}\]\u \[$RESET\]at \[$ORANGE\]\h \[$RESET\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n→ \[$RESET\]"

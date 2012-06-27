@@ -34,6 +34,7 @@ div.promoted-tweet {
 li[data-global-action="discover"],
 .component[data-component-term="user_recommendations"],
 .component[data-component-term="similar_user_recommendations"],
+div[guidedhelpid="invitefriends"],
 .module.trends.component {
 	display: none !important;
 }

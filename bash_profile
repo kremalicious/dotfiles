@@ -31,7 +31,7 @@ unset MAILCHECK
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin";
 
 # if these bins exist, then add them to the PATH
-ANDROID_HOME="/usr/local/Cellar/android-sdk/r18"
+ANDROID_HOME="/usr/local/Cellar/android-sdk/r20"
 [ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools";
 
 # add to beginning of PATH so that it always take precedence over /usr/bin
@@ -45,8 +45,9 @@ export PATH
 # ----------------------------------------------------------------------
 
 alias ll='ls -la'
-# Get into main server FAST. Server & port are in .ssh/config
+# Get into some servers FAST. Server, user & port are in .ssh/config
 alias krlc='ssh kremalicious'
+alias mlublogs='ssh mlublogs'
 # Terminal needs more Espresso
 alias esp="open -a Espresso"
 # Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages

@@ -3,9 +3,14 @@
 	CSS rules for a more sane web
 	#############################
 	
-	Usage: 
+	Usage:
+	# Safari
 	select as user style sheet in browser
-	or use defaults write... rules in dotfiles/osx
+	or use defaults write... rules from dotfiles/osx
+	
+	# Chrome
+	symlink to 
+	Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 */
 
 /* GOOGLE SEARCH

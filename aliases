@@ -1,0 +1,22 @@
+# ----------------------------------------------------------------------
+#  ALIASES
+# ----------------------------------------------------------------------
+
+alias ll='ls -la'
+
+# Get into some servers FAST. Server, user & port are in .ssh/config
+alias krlc='ssh kremalicious'
+alias mlublogs='ssh mlublogs'
+
+# Terminal needs more Espresso
+alias esp="open -a Espresso"
+
+# Update All The Things
+alias update='sudo softwareupdate -i -a; sudo gem update --system; sudo gem update; brew update; brew upgrade; npm update -g'
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"

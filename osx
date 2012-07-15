@@ -27,15 +27,6 @@ defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-###############################################################################
-# Screen                                                                      #
-###############################################################################
-
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "$HOME/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
 
 ###############################################################################
 # Finder                                                                      #
@@ -73,7 +64,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 chflags nohidden ~/Library
 
 ###############################################################################
-# Dock & hot corners                                                          #
+# Dock 				                                                          #
 ###############################################################################
 
 # Show indicator lights for open applications in the Dock

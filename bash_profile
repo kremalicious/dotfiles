@@ -12,7 +12,7 @@
 # Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{private,bash_prompt}; do
+for file in ~/.{bash_prompt,aliases,private}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -20,6 +20,13 @@ unset file
 # ----------------------------------------------------------------------
 #  SHELL OPTIONS
 # ----------------------------------------------------------------------
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
 
 # fuck that you have new mail shit
 unset MAILCHECK
@@ -39,19 +46,6 @@ ANDROID_HOME="/usr/local/Cellar/android-sdk/r20"
 [ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH";
 
 export PATH
-
-# ----------------------------------------------------------------------
-#  ALIASES
-# ----------------------------------------------------------------------
-
-alias ll='ls -la'
-# Get into some servers FAST. Server, user & port are in .ssh/config
-alias krlc='ssh kremalicious'
-alias mlublogs='ssh mlublogs'
-# Terminal needs more Espresso
-alias esp="open -a Espresso"
-# Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
-alias update='sudo softwareupdate -i -a; sudo gem update --system; sudo gem update; brew update; brew upgrade; npm update -g'
 
 # ----------------------------------------------------------------------
 # LSCOLORS

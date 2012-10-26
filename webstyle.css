@@ -37,10 +37,9 @@ div.promoted-tweet {
 
 /* Discover menu, Who to follow, Similiar, Trends */
 li[data-global-action="discover"],
-.component[data-component-term="user_recommendations"],
-.component[data-component-term="similar_user_recommendations"],
+.dashboard > .module.wtf-module.js-wtf-module.has-content,
 div[guidedhelpid="invitefriends"],
-.module.trends.component {
+.module.trends {
 	display: none !important;
 }
 

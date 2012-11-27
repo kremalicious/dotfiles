@@ -38,12 +38,13 @@ unset MAILCHECK
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin";
 
 # if these bins exist, then add them to the PATH
-ANDROID_HOME="/usr/local/Cellar/android-sdk/r20"
+ANDROID_HOME="/usr/local/Cellar/android-sdk/r21"
 [ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools";
 
 # add to beginning of PATH so that it always take precedence over /usr/bin
 [ -d "/usr/local/bin" ] && PATH="/usr/local/bin:$PATH";
 [ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH";
+[ -d "/usr/local/share/npm/bin" ] && PATH="/usr/local/share/npm/bin:$PATH";
 
 export PATH
 

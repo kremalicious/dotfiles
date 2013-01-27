@@ -1,7 +1,7 @@
 ########################################################################
 # bash_profile, basically from the whole internet
 # and a lot from @necolas, @mathiasbynens & @rtomayko
-# 
+#
 # https://github.com/mathiasbynens/dotfiles
 # https://github.com/necolas/dotfiles
 # https://github.com/rtomayko/dotfiles
@@ -45,6 +45,9 @@ ANDROID_HOME="/usr/local/Cellar/android-sdk/r21"
 [ -d "/usr/local/bin" ] && PATH="/usr/local/bin:$PATH";
 [ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH";
 [ -d "/usr/local/share/npm/bin" ] && PATH="/usr/local/share/npm/bin:$PATH";
+
+[ -d "$HOME/.rvm/bin" ] && PATH="$HOME/.rvm/bin:$PATH"; # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH
 

@@ -2,14 +2,14 @@
 	#############################
 	CSS rules for a more sane web
 	#############################
-	
+
 	Usage:
 	# Safari
 	select as user style sheet in browser
 	or use defaults write... rules from dotfiles/osx
-	
+
 	# Chrome
-	symlink to 
+	symlink to
 	Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 */
 
@@ -47,9 +47,31 @@ div[guidedhelpid="invitefriends"],
 /* GOOGLE+
    -----------------------------------------*/
 
-/* I don't think that's Fun & Interesting */ 
+/* I don't think that's Fun & Interesting */
 div[guidedhelpid="celebritysuggestions"],
 div.o6.jea {
+	display: none !important;
+}
+
+/* I don't think that's Fun & Interesting */
+div[guidedhelpid="celebritysuggestions"],
+div.o6.jea {
+	display: none !important;
+}
+
+
+/* FACEBOOK
+   -----------------------------------------*/
+
+#facebook .ego_column,
+#facebook #adsNav,
+#facebook #appsNav,
+#pagelet_friends_online,
+#navItem_app_357937250942127,
+#navItem_app_140472815972081,
+#developerNav,
+#groupsNav,
+#navItem_app_2356318349 {
 	display: none !important;
 }
 

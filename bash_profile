@@ -49,6 +49,8 @@ ANDROID_HOME="/usr/local/Cellar/android-sdk/r21"
 [ -d "$HOME/.rvm/bin" ] && PATH="$HOME/.rvm/bin:$PATH"; # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+[ -d "/Applications/Vagrant/bin" ] && PATH="/Applications/Vagrant/bin:$PATH"; # vagrant binary
+
 export PATH
 
 # ----------------------------------------------------------------------

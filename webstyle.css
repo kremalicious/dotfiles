@@ -42,6 +42,27 @@ table.ae6 {
     border: none !important;
 }
 
+
+/* GITHUB
+   -----------------------------------------*/
+
+.file-code code,
+.file-code pre,
+.commits code,
+.commits pre,
+.diff-line-code,
+#files .file .meta .info, 
+.file-box .meta .info,
+.diff-line-num, 
+.blob-line-nums,
+.commit .sha-block, 
+.commit .sha,
+.news .alert .branch-link,
+.repository-with-sidebar .repository-sidebar input.clone {
+    font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier, monospace !important;
+}
+
+
 /* TWITTER
    -----------------------------------------*/
 

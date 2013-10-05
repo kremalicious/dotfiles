@@ -3,7 +3,7 @@
 ########################################################################
 
 [user]
-	email = matthias.kretschmann@ezeep.com
+	email = m@kretschmann.io
 	name = Matthias Kretschmann
 [github]
 	user = kremalicious
@@ -32,8 +32,7 @@
 	changed = yellow bold
 	untracked = red
 [push]
-	#'git push' only the current branch
-	default = current
+	default = matching
 [alias]
 	s = status
 	a = !git add . && git status

@@ -22,19 +22,13 @@
 	display: none !important;
 }
 
-/* Dude, I'm searching not socialising */
-#gsr #gbu {
-	display: none !important;
-}
-
 
 /* GMAIL
    -----------------------------------------*/
 
-.nH.adC,
-.nH.PS,
-table.ae6 {
-    display: none;
+/* hide google links in footer but keep layout */
+div.aeU {
+    visibility: hidden;
 }
 
 .mq {
@@ -82,12 +76,6 @@ div[guidedhelpid="invitefriends"],
 
 /* GOOGLE+
    -----------------------------------------*/
-
-/* I don't think that's Fun & Interesting */
-div[guidedhelpid="celebritysuggestions"],
-div.o6.jea {
-	display: none !important;
-}
 
 /* I don't think that's Fun & Interesting */
 div[guidedhelpid="celebritysuggestions"],

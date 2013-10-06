@@ -18,5 +18,5 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Show/hide hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool TRUE && killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool FALSE && killall Finder"

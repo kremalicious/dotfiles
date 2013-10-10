@@ -27,13 +27,13 @@
    -----------------------------------------*/
 
 /* hide google links in footer but keep layout */
-div.aeU {
+.aeG div.aeU {
     visibility: hidden;
 }
 
-.mq {
-    background: #fff !important;
-    border: none !important;
+/* Ads */
+body.aAU .mq {
+    display: none !important;
 }
 
 

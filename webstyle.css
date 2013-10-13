@@ -26,9 +26,32 @@
 /* GMAIL
    -----------------------------------------*/
 
-/* hide google links in footer but keep layout */
-.aeG div.aeU {
-    visibility: hidden;
+/* more space at top of mails */
+div.AO div.aeF {
+	margin-top: 12px;
+}
+
+/* hide google footer */
+.aeJ div.aeG,
+td.Bu div.aeV,
+td.Bu div.aeU,
+td.Bu div.ae3 {
+    display: none !important;
+}
+
+/* fuck you too, social sidebar and share thingy */
+td.Bu.y3,
+#gbgs3 {
+	display: none !important;
+}
+
+/* center more stuff */
+div.gB.xu table.cf.FVrZGe,
+div.ip.adB,
+.hx .h7 .Bk .G2 .adn {
+	max-width: 768px;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 /* Ads */

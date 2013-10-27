@@ -14,7 +14,7 @@
 # dotfiles directory
 dir=~/.dotfiles
 # list of files/folders to symlink in homedir
-files="aliases bashrc bash_profile bash_prompt gitconfig gitignore_global hushlogin private"
+files="aliases bashrc bash_profile bash_prompt gitconfig gitignore_global hushlogin private tm_properties"
 
 # ----------------------------------------------------------------------
 # change to the dotfiles directory

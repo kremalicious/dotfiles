@@ -1,0 +1,64 @@
+# Settings
+
+encoding         = UTF-8
+fontName         = "Source Code Pro"
+fontSize         = 13
+lineEndings      = '\n'
+showInvisibles   = false
+softWrap         = true
+softTabs         = true
+wrapColumn       = "Use Window Frame"
+tabSize          = 4
+spellChecking    = false
+
+# Hidden Settings, to be executed in Terminal
+# https://github.com/textmate/textmate/wiki/Hidden-Settings
+
+# Make file browser a bit more pretty
+#defaults write com.macromates.TextMate.preview fileBrowserStyle SourceList
+
+# Font Smoothing always enabled
+#defaults write com.macromates.TextMate.preview fontSmoothing 1
+
+# Monokai
+
+theme            = D8D5E82E-3D5B-46B5-B38E-8C841C21347D
+
+# Includes
+
+myExtraIncludes  = ".tm_properties,.htaccess,.git,.gitignore,.dotfiles"
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include          = "{$include,$myExtraIncludes}"
+
+# Hide directories from search popups.
+
+myExtraExcludes         = "log,vendor,tmp,generated,dist"
+excludeInFileChooser    = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch   = "{$excludeInFolderSearch,$myExtraExcludes}" 
+
+# Variables
+
+TM_FULLNAME      = "Matthias Kretschmann"
+TM_GIT           = "/usr/local/bin/git"
+
+
+[ text ]
+spellChecking    = true
+
+[ text.plain ]
+spellChecking    = true
+softTabs         = false
+
+[ text.html.markdown ]
+spellChecking    = true
+softTabs         = false
+
+[ source ]
+softTabs         = true
+tabSize          = 2
+
+[ source.plist ]
+softTabs         = false
+
+[ source.tm-properties ]
+spellChecking    = false

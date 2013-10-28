@@ -2,7 +2,7 @@
 
 encoding         = UTF-8
 fontName         = "Source Code Pro"
-fontSize         = 13
+fontSize         = 12
 lineEndings      = '\n'
 showInvisibles   = false
 softWrap         = true
@@ -55,7 +55,6 @@ softTabs         = false
 
 [ source ]
 softTabs         = true
-tabSize          = 2
 
 [ source.plist ]
 softTabs         = false

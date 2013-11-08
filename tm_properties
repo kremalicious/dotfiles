@@ -26,7 +26,7 @@ theme            = D8D5E82E-3D5B-46B5-B38E-8C841C21347D
 
 # Includes
 
-myExtraIncludes  = ".tm_properties,.htaccess,.git,.gitignore,.dotfiles"
+myExtraIncludes  = ".tm_properties,.htaccess,.git,.gitignore,.gitmodules,.dotfiles"
 fileBrowserGlob  = "{*,$myExtraIncludes}"
 include          = "{$include,$myExtraIncludes}"
 

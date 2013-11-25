@@ -1,7 +1,7 @@
 # Settings
 
 encoding         = UTF-8
-fontName         = "Source Code Pro"
+fontName         = "Source Code Pro Medium"
 fontSize         = 12
 lineEndings      = '\n'
 showInvisibles   = false
@@ -22,7 +22,7 @@ spellChecking    = false
 
 # Monokai
 
-theme            = D8D5E82E-3D5B-46B5-B38E-8C841C21347D
+#theme            = D8D5E82E-3D5B-46B5-B38E-8C841C21347D
 
 # Includes
 

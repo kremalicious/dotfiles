@@ -26,7 +26,7 @@ spellChecking    = false
 
 # Includes
 
-myExtraIncludes  = ".tm_properties,.htaccess,.git,.gitignore,.gitmodules,.dotfiles"
+myExtraIncludes  = ".tm_properties,.htaccess,.git,.gitignore,.gitmodules,.dotfiles,.csslintrc,.jshintrc"
 fileBrowserGlob  = "{*,$myExtraIncludes}"
 include          = "{$include,$myExtraIncludes}"
 

@@ -61,6 +61,16 @@ body.aAU .mq {
 }
 
 
+/* CHROME
+   -----------------------------------------*/
+
+/* fuck you google for putting your ads 
+   in my browser start page */
+#prm-pt {
+    display: none !important;
+}
+
+
 /* GITHUB
    -----------------------------------------*/
 

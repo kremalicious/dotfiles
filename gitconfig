@@ -7,6 +7,7 @@
 	name = Matthias Kretschmann
 [github]
 	user = kremalicious
+	token = !"cat ~/.auth/github | tr -d \"\n\""
 [credential]
 	helper = osxkeychain
 [core]

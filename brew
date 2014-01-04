@@ -9,4 +9,8 @@ brew upgrade
 # Install what we need
 brew install git
 brew install node
+brew install wget
+brew install gpg2
+brew install mysql
+brew install imagemagick
 brew install android

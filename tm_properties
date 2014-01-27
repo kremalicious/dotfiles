@@ -1,7 +1,7 @@
 # Settings
 
 encoding         = UTF-8
-fontName         = "Source Code Pro Medium"
+fontName         = "SourceCodePro-Medium"
 fontSize         = 12
 lineEndings      = '\n'
 showInvisibles   = false

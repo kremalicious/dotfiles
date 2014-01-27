@@ -13,4 +13,5 @@ brew install wget
 brew install gpg2
 brew install mysql
 brew install imagemagick
+brew install GraphicsMagick
 brew install android

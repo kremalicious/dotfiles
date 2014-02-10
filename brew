@@ -15,3 +15,11 @@ brew install mysql
 brew install imagemagick
 brew install GraphicsMagick
 brew install android
+
+# fix for failing 'npm update' with brew installed node
+# reference: https://github.com/Homebrew/homebrew/issues/22408#issuecomment-30812725
+for man in 1 3 5 7; do
+  ln -sf /usr/local/lib/node_modules/npm/man/man${man}/* /usr/local/share/man/man${man}
+done
+
+ln -sf /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm

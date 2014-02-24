@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Installed from brewfile with node
+
+# install global stuff
+npm install -g bower
+npm install -g grunt-cli
+npm install -g yo

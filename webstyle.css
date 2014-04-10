@@ -103,7 +103,9 @@ div.promoted-tweet {
 li[data-global-action="discover"],
 .dashboard > .module.wtf-module.js-wtf-module.has-content,
 div[guidedhelpid="invitefriends"],
-.module.trends {
+.module.trends,
+.ProfileWTFAndTrends,
+.ScrollBump--recentlyFollowed {
 	display: none !important;
 }
 

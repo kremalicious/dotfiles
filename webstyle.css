@@ -115,7 +115,9 @@ div[guidedhelpid="invitefriends"],
 
 /* I don't think that's Fun & Interesting */
 div[guidedhelpid="celebritysuggestions"],
-div.o6.jea {
+div.o6.jea,
+a.gb_Db.gbp1.gb_N,
+div.Qd.Gb.qd.pP.EX {
 	display: none !important;
 }
 

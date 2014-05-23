@@ -1,0 +1,6 @@
+
+# Use european registry to be faster
+registry = http://registry.npmjs.eu
+
+# Make npm less noisy
+loglevel = warn

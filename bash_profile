@@ -31,6 +31,17 @@ export LANG="en_US"
 # fuck that you have new mail shit
 unset MAILCHECK
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Add tab completion for many Bash commands
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+    source "$(brew --prefix)/etc/bash_completion"
+fi
+
 # ----------------------------------------------------------------------
 #  PATH
 # ----------------------------------------------------------------------

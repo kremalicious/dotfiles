@@ -55,7 +55,13 @@ function parse_git_dirty() {
 }
 
 function parse_git_branch() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+	local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+	if [ -n "${branch}" ]; then
+		[ "${branch}" == "HEAD" ] && local branch=$(git rev-parse --short HEAD 2>/dev/null)
+		local status=$(git status --porcelain 2>/dev/null)
+		echo -n "${PURPLE}${branch}"
+		[ -n "${status}" ] && echo -n "*"
+	fi
 }
 
 PS1="\n\[${BOLD}${MAGENTA}\]\u \[$RESET\]at \[$ORANGE\]\h \[$RESET\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n→ \[$RESET\]"

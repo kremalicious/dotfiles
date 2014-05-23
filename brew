@@ -11,13 +11,10 @@ brew upgrade
 
 # Install what we need
 brew install git
-brew install node --without-npm
+brew install node
 brew install wget
 brew install gpg2
 brew install mysql
 brew install imagemagick
 brew install GraphicsMagick
 brew install android
-
-# Install npm on its own
-curl -L https://npmjs.org/install.sh | sh

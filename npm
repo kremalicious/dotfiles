@@ -5,4 +5,5 @@
 # install global stuff
 npm install -g bower
 npm install -g grunt-cli
+npm install -g gulp
 npm install -g yo

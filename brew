@@ -10,6 +10,7 @@ brew update
 brew upgrade
 
 # Install what we need
+brew install bash-completion
 brew install git
 brew install node
 brew install wget

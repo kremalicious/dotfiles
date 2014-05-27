@@ -42,6 +42,9 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
     source "$(brew --prefix)/etc/bash_completion"
 fi
 
+# Set architecture flags
+export ARCHFLAGS="-arch x86_64"
+
 # ----------------------------------------------------------------------
 #  PATH
 # ----------------------------------------------------------------------

@@ -64,7 +64,7 @@ body.aAU .mq {
 /* CHROME
    -----------------------------------------*/
 
-/* fuck you google for putting your ads 
+/* fuck you google for putting your ads
    in my browser start page */
 #prm-pt {
     display: none !important;
@@ -79,14 +79,20 @@ body.aAU .mq {
 .commits code,
 .commits pre,
 .diff-line-code,
-#files .file .meta .info, 
+#files .file .meta .info,
 .file-box .meta .info,
-.diff-line-num, 
+.diff-line-num,
 .blob-line-nums,
-.commit .sha-block, 
+.commit .sha-block,
 .commit .sha,
 .news .alert .branch-link,
-.repository-with-sidebar .repository-sidebar input.clone {
+.repository-with-sidebar .repository-sidebar input.clone,
+.comment-body code,
+.comment-body pre,
+.commit-message code,
+.commit-sha,
+.commit-id,
+.branch-name {
     font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier, monospace !important;
 }
 

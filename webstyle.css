@@ -78,6 +78,8 @@ body.aAU .mq {
 .file-code pre,
 .commits code,
 .commits pre,
+.markdown-body pre,
+.markdown-body code,
 .diff-line-code,
 #files .file .meta .info,
 .file-box .meta .info,
@@ -92,7 +94,8 @@ body.aAU .mq {
 .commit-message code,
 .commit-sha,
 .commit-id,
-.branch-name {
+.branch-name,
+input.url-field {
     font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier, monospace !important;
 }
 

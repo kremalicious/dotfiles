@@ -16,7 +16,10 @@
 	quotepath = false
 
     # Handle umlauts and such better on OS X
-	precomposeunicode = true
+    #   for whatever crazy reason this explicitly
+    #   has to be set to false so tracked files with
+    #   special characters don't get treated as untracked
+	precomposeunicode = false
 
     # Make `git rebase` safer on OS X
 	# More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/

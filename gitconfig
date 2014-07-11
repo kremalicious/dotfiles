@@ -15,8 +15,11 @@
 	excludesfile = ~/.gitignore_global
 	quotepath = false
 
+    # Handle umlauts and such better on OS X
+	precomposeunicode = true
+
     # Make `git rebase` safer on OS X
-	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	# More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
 	trustctime = false
 
 [alias]

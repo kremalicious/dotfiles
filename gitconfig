@@ -43,6 +43,12 @@
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+[fetch]
+    prune = true
+
+[push]
+	default = matching
+
 [color]
 	diff = auto
 	status = auto
@@ -63,19 +69,17 @@
 	changed = yellow bold
 	untracked = red
 
-[push]
-	default = matching
-
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+# Set Kaleidoscope as diff and merge tool
 [diff]
     tool = Kaleidoscope
 [difftool]
     prompt = false
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = Kaleidoscope
+[mergetool]
+    prompt = false
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
-[mergetool]
-    prompt = false
-[merge]
-    tool = Kaleidoscope

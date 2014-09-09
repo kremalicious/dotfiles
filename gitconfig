@@ -47,7 +47,7 @@
     prune = true
 
 [push]
-	default = matching
+	default = current
 
 [color]
 	diff = auto

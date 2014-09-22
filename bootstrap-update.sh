@@ -14,7 +14,7 @@
 # dotfiles directory
 dir=~/Projects/dotfiles
 # list of files/folders to symlink in homedir
-files="aliases bashrc bash_profile bash_prompt gemrc gitconfig gitignore_global hushlogin inputrc private tm_properties generator.json npmrc"
+files="aliases bashrc bash_profile bash_prompt gemrc gitconfig gitignore_global hushlogin inputrc private tm_properties generator.json npmrc bin"
 
 # ----------------------------------------------------------------------
 # change to the dotfiles directory

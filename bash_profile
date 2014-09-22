@@ -61,6 +61,7 @@ export ARCHFLAGS="-arch x86_64"
 # we want the various sbins on the path along with /usr/local/bin
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
+[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
 
 # if these bins exist, then add them to the PATH
 ANDROID_HOME="/usr/local/opt/android-sdk"

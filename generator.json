@@ -1,5 +1,6 @@
 {
-    "generator-assets":  { 
-        "svg-enabled": true
+    "generator-assets":  {
+        "css-enabled": true,
+        "webp-enabled": true
     }
 }

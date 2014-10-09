@@ -4,7 +4,7 @@
 # OS X
 # -------------
 
-sudo softwareupdate -i -a
+#sudo softwareupdate -i -a
 
 #
 # Homebrew
@@ -20,7 +20,7 @@ brew cleanup
 # -------------
 
 # update npm itself
-npm update npm -g
+npm install npm -g
 
 # update all global packages
 #npm update -g

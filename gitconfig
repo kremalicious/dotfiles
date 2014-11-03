@@ -2,17 +2,19 @@
 # Le Git Config
 ########################################################################
 
-[user]
-	email = m@kretschmann.io
-	name = Matthias Kretschmann
+# Values coming from environment variables set in private file
+# [user]
+#     email =
+#     name =
+
 [github]
 	user = kremalicious
-	token = !"cat ~/.auth/github | tr -d \"\n\""
+
 [credential]
 	helper = osxkeychain
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
 	quotepath = false
 
     # Handle umlauts and such better on OS X
@@ -83,3 +85,6 @@
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
+[user]
+	name = 
+	email = m@kretschmann.io

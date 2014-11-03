@@ -12,7 +12,7 @@
 # Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{bash_prompt,aliases,private,inputrc}; do
+for file in ~/.{bash_prompt,aliases,exports,paths,private,inputrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done;
 unset file;
@@ -23,10 +23,6 @@ unset file;
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
-
-# Prefer US English and use UTF-8
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
 
 # fuck that you have new mail shit
 unset MAILCHECK
@@ -51,33 +47,11 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
-# Set architecture flags
-export ARCHFLAGS="-arch x86_64"
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# ----------------------------------------------------------------------
-#  PATH
-# ----------------------------------------------------------------------
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
 
-# we want the various sbins on the path along with /usr/local/bin
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
-PATH="/usr/local/bin:$PATH"
-[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
-
-# if these bins exist, then add them to the PATH
-ANDROID_HOME="/usr/local/opt/android-sdk"
-[ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-
-[ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH"
-[ -d "/usr/local/share/npm/bin" ] && PATH="/usr/local/share/npm/bin:$PATH"
-
-[ -d "$HOME/.rvm/bin" ] && PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH;
-
-# ----------------------------------------------------------------------
-# LSCOLORS
-# ----------------------------------------------------------------------
-
-export CLICOLOR=1
-export LSCOLORS=gxfxcxdxbxegedabagacad
+# aws-cli tab completion
+complete -C aws_completer aws

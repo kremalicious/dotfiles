@@ -1,0 +1,12 @@
+[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
+
+ANDROID_HOME="/usr/local/opt/android-sdk"
+[ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+
+[ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH"
+[ -d "/usr/local/share/npm/bin" ] && PATH="/usr/local/share/npm/bin:$PATH"
+
+[ -d "$HOME/.rvm/bin" ] && PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH

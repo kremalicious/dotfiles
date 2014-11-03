@@ -1,6 +1,7 @@
 {
     "generator-assets":  {
         "css-enabled": true,
-        "webp-enabled": true
+        "webp-enabled": true,
+        "include-ancestor-masks": true
     }
 }

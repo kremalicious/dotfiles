@@ -4,11 +4,23 @@
 
 alias ll='ls -la'
 
+# Easier navigation: .., ..., ~
+alias ..="cd .."
+alias ...="cd ../.."
+alias ~="cd ~"
+
 # Get into some servers FAST. Server, user & port are in .ssh/config
 alias krlc='ssh kremalicious'
 
 # Update All The Things
 alias update='update-everything.sh'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+
+# Copy public key to pasteboard
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=> Public key copied to pasteboard.\n'"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

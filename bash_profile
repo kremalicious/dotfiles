@@ -55,3 +55,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # aws-cli tab completion
 complete -C aws_completer aws
+
+# grunt-cli tab completion
+eval "$(grunt --completion=bash)"
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

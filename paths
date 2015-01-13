@@ -1,12 +1,41 @@
-[ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
+# adapted based on https://github.com/necolas/dotfiles/blob/master/shell/bash_paths
 
-ANDROID_HOME="/usr/local/opt/android-sdk"
-[ -d "$ANDROID_HOME" ] && PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+# Directories to be prepended to PATH
+declare -a dirs_to_prepend=(
+    "/usr/local/sbin"
+    "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
+)
 
-[ -d "/usr/local/mysql/bin" ] && PATH="/usr/local/mysql/bin:$PATH"
-[ -d "/usr/local/share/npm/bin" ] && PATH="/usr/local/share/npm/bin:$PATH"
+# Directories to be appended to PATH
+declare -a dirs_to_append=(
+    "/usr/bin"
+    "$HOME/.bin"
+    "$HOME/.rvm/bin"
+    "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
+    "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
+    "$(brew --prefix android-sdk)/tools"
+    "$(brew --prefix android-sdk)/platform-tools"
+    "$(brew --prefix mysql)/bin"
+)
 
-[ -d "$HOME/.rvm/bin" ] && PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Prepend directories to PATH
+for index in ${!dirs_to_prepend[*]}
+do
+    if [ -d ${dirs_to_prepend[$index]} ]; then
+        # If these directories exist, then prepend them to existing PATH
+        PATH="${dirs_to_prepend[$index]}:$PATH"
+    fi
+done
+
+# Append directories to PATH
+for index in ${!dirs_to_append[*]}
+do
+    if [ -d ${dirs_to_append[$index]} ]; then
+        # If these bins exist, then append them to existing PATH
+        PATH="$PATH:${dirs_to_append[$index]}"
+    fi
+done
+
+unset dirs_to_prepend dirs_to_append
 
 export PATH

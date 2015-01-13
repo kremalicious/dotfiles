@@ -10,6 +10,7 @@ brew update
 brew upgrade
 
 # Install what we need
+brew install coreutils
 brew install bash
 brew install bash-completion
 brew install git

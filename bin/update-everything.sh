@@ -34,8 +34,7 @@ echo "$(tput sgr0)" # reset
 npm install npm -g
 
 # update all global packages
-#npm update -g
-sh npm-upgrade.sh
+npm update -g
 
 #
 # Ruby
@@ -55,20 +54,6 @@ rvm gemset update
 
 # cleanup
 rvm cleanup all
-
-
-#
-# Gems
-# -------------
-
-echo "$(tput setaf 136)"
-echo "Update gems                   "
-echo "=============================="
-echo "$(tput sgr0)" # reset
-
-gem update --system
-gem update
-
 
 
 echo "$(tput setaf 64)" # green

@@ -2,6 +2,7 @@
 
 # Directories to be prepended to PATH
 declare -a dirs_to_prepend=(
+    "$HOME/.bin"
     "/usr/local/sbin"
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
 )
@@ -9,8 +10,6 @@ declare -a dirs_to_prepend=(
 # Directories to be appended to PATH
 declare -a dirs_to_append=(
     "/usr/bin"
-    "$HOME/.bin"
-    "$HOME/.rvm/bin"
     "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
     "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
     "$(brew --prefix android-sdk)/tools"

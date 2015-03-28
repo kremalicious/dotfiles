@@ -12,7 +12,7 @@
 # Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{bash_prompt,aliases,exports,paths,private,inputrc}; do
+for file in ~/.{bash_paths,bash_prompt,exports,aliases,inputrc,private}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done;
 unset file;
@@ -58,6 +58,13 @@ complete -C aws_completer aws
 
 # grunt-cli tab completion
 eval "$(grunt --completion=bash)"
+
+# ----------------------------------------------------------------------
+#  rvm
+# ----------------------------------------------------------------------
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

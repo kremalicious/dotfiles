@@ -32,3 +32,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool TRUE && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool FALSE && killall Finder"
+
+# install npm packages from the cache
+# ht: http://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
+alias npmoffline="npm --cache-min 9999999 "

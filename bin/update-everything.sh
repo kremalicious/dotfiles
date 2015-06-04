@@ -17,7 +17,7 @@ echo "=============================="
 echo "$(tput sgr0)" # reset
 
 brew update
-brew upgrade
+brew upgrade --all
 brew cleanup
 
 

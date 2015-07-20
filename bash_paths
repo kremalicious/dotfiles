@@ -38,3 +38,6 @@ done
 unset dirs_to_prepend dirs_to_append
 
 export PATH
+
+# define CDPATHs which are autocompleted from when doing cd
+export CDPATH=$CDPATH:~/Code:~/Projects

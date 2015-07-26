@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Pull in changes and make new symlinks
 #
@@ -47,7 +47,7 @@ echo "$(tput sgr0)" # reset
 # ----------------------------------------------------------------------
 
 for file in $files; do
-	rm ~/.$file
+    rm ~/.$file
 done
 
 # ----------------------------------------------------------------------

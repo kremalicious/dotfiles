@@ -21,3 +21,4 @@ brew install mysql
 brew install imagemagick
 brew install GraphicsMagick
 brew install android
+brew install tor

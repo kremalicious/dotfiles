@@ -22,3 +22,6 @@ brew install imagemagick
 brew install GraphicsMagick
 brew install android
 brew install tor
+
+# Link gpg to gpg2
+ln -s /usr/local/bin/gpg2 /usr/local/bin/gpg

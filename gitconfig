@@ -7,6 +7,9 @@
 #     email =
 #     name =
 
+[gpg]
+    program = gpg2
+    
 [github]
     user = kremalicious
 

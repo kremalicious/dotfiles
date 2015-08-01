@@ -8,68 +8,68 @@
 #     name =
 
 [github]
-	user = kremalicious
+    user = kremalicious
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [core]
-	excludesfile = ~/.gitignore
-	quotepath = false
+    excludesfile = ~/.gitignore
+    quotepath = false
 
     # Handle umlauts and such better on OS X
     #   for whatever crazy reason this explicitly
     #   has to be set to false so tracked files with
     #   special characters don't get treated as untracked
-	precomposeunicode = false
+    precomposeunicode = false
 
     # Make `git rebase` safer on OS X
-	# More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
-	trustctime = false
+    # More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+    trustctime = false
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
     ll = log --stat --abbrev-commit
 
     # View the current working tree status using the short format
-	s = status -s
+    s = status -s
 
     # Clone a repository including all submodules
     c = clone --recursive
 
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
+    # Amend the currently staged files to the latest commit
+    amend = commit --amend --reuse-message=HEAD
 
     # Remove branches that have already been merged with master
-	# a.k.a. ‘delete merged’
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+    # a.k.a. ‘delete merged’
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [fetch]
     prune = true
 
 [push]
-	default = current
+    default = current
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
 [color "branch"]
-	current = green bold
-	local = green
-	remote = red bold
+    current = green bold
+    local = green
+    remote = red bold
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red
+    added = green bold
+    changed = yellow bold
+    untracked = red
 
 # Set Kaleidoscope as diff and merge tool
 [diff]
@@ -85,3 +85,6 @@
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
+
+[ghi]
+    token = !security find-internet-password -a kremalicious -s github.com -l 'ghi token' -w

@@ -7,9 +7,15 @@
 #     email =
 #     name =
 
+[user]
+    signingkey = DD7831FC
+
+[commit]
+    gpgsign = true
+
 [gpg]
     program = gpg2
-    
+
 [github]
     user = kremalicious
 

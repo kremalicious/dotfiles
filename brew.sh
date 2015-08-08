@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# give me /usr/local first
+sudo chown -R $USER /usr/local
+
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -7,7 +10,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew update
 
 # Upgrade any already-installed formulae
-brew upgrade
+brew upgrade --all
 
 # Install what we need
 brew install coreutils
@@ -25,3 +28,6 @@ brew install tor
 
 # Link gpg to gpg2
 ln -s /usr/local/bin/gpg2 /usr/local/bin/gpg
+
+# Remove outdated versions from the cellar.
+brew cleanup

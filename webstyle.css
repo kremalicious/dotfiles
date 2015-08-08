@@ -1,16 +1,16 @@
 /*
-	#############################
-	CSS rules for a more sane web
-	#############################
+    #############################
+    CSS rules for a more sane web
+    #############################
 
-	Usage:
-	# Safari
-	select as user style sheet in browser
-	or use defaults write... rules from dotfiles/osx
+    Usage:
+    # Safari
+    select as user style sheet in browser
+    or use defaults write... rules from dotfiles/osx
 
-	# Chrome
-	symlink to
-	Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
+    # Chrome
+    symlink to
+    Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 */
 
 /* GOOGLE SEARCH
@@ -19,7 +19,7 @@
 /* Ads */
 #tads,
 #bottomads {
-	display: none !important;
+    display: none !important;
 }
 
 
@@ -28,7 +28,7 @@
 
 /* more space at top of mails */
 div.AO div.aeF {
-	margin-top: 12px;
+    margin-top: 12px;
 }
 
 /* hide google footer */
@@ -43,16 +43,16 @@ td.Bu div.ae3 {
 td.Bu.y3,
 #gbgs3,
 .gb_7a.gb_ya.gb_g {
-	display: none !important;
+    display: none !important;
 }
 
 /* center more stuff */
 div.gB.xu table.cf.FVrZGe,
 div.ip.adB,
 .hx .h7 .Bk .G2 .adn {
-	max-width: 768px;
-	margin-left: auto !important;
-	margin-right: auto !important;
+    max-width: 768px;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* Ads */
@@ -105,7 +105,7 @@ input.url-field {
 
 /* Nice try, Twitter */
 div.promoted-tweet {
-	display: none !important;
+    display: none !important;
 }
 
 /* Discover menu, Who to follow, Similiar, Trends */
@@ -114,8 +114,14 @@ li[data-global-action="discover"],
 div[guidedhelpid="invitefriends"],
 .module.trends,
 .ProfileWTFAndTrends,
-.ScrollBump--recentlyFollowed {
-	display: none !important;
+.ScrollBump--recentlyFollowed,
+.WhoToFollow {
+    display: none !important;
+}
+
+/* "While you were away" is nothing I care about */
+.stream-item.has-recap {
+    display: none !important;
 }
 
 
@@ -127,7 +133,7 @@ div[guidedhelpid="celebritysuggestions"],
 div.o6.jea,
 a.gb_Db.gbp1.gb_N,
 div.Qd.Gb.qd.pP.EX {
-	display: none !important;
+    display: none !important;
 }
 
 
@@ -143,7 +149,7 @@ div.Qd.Gb.qd.pP.EX {
 #developerNav,
 #groupsNav,
 #navItem_app_2356318349 {
-	display: none !important;
+    display: none !important;
 }
 
 
@@ -154,5 +160,5 @@ div.Qd.Gb.qd.pP.EX {
 #newsletter-ad,
 #recent-badges,
 .everyonelovesstackoverflow {
-	display: none !important;
+    display: none !important;
 }

@@ -162,3 +162,16 @@ div.Qd.Gb.qd.pP.EX {
 .everyonelovesstackoverflow {
     display: none !important;
 }
+
+
+/* CODESHIP
+   -----------------------------------------*/
+
+.widget.-parallelci-trial,
+[data-modal-src="/modals/parallelci_trial"] {
+    display: none !important;
+}
+
+#content .widget.-help h2 {
+    font-weight: 600
+}

@@ -11,8 +11,10 @@
 # Variables
 # ----------------------------------------------------------------------
 
+$DOTFILES_DIR='~/Projects/dotfiles'
+
 # dotfiles directory
-dir=~/Projects/dotfiles
+dir=$DOTFILES_DIR
 
 # list of files/folders to symlink in homedir
 files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private tm_properties npmrc bin"

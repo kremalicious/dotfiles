@@ -11,8 +11,6 @@
 # Variables
 # ----------------------------------------------------------------------
 
-$DOTFILES_DIR='~/Projects/dotfiles'
-
 # dotfiles directory
 dir=$DOTFILES_DIR
 

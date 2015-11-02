@@ -12,4 +12,4 @@ rvm use --default 2.2.2
 rvm rubygems latest
 
 # Install gems
-gem install bundler jekyll ghi
+gem install bundler jekyll ghi lunchy

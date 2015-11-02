@@ -20,11 +20,10 @@ brew install git
 brew install node
 brew install wget
 brew install gpg2
-brew install mysql
 brew install imagemagick
 brew install GraphicsMagick
-brew install android
 brew install tor
+brew install gsl
 
 # Link gpg to gpg2
 ln -s /usr/local/bin/gpg2 /usr/local/bin/gpg

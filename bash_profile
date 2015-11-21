@@ -56,8 +56,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # aws-cli tab completion
 complete -C aws_completer aws
 
-# grunt-cli tab completion
-eval "$(grunt --completion=bash)"
 
 # ----------------------------------------------------------------------
 #  rvm

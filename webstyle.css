@@ -115,13 +115,25 @@ div[guidedhelpid="invitefriends"],
 .module.trends,
 .ProfileWTFAndTrends,
 .ScrollBump--recentlyFollowed,
-.WhoToFollow {
+.WhoToFollow,
+.Footer,
+.SidebarCommonModules {
     display: none !important;
 }
 
 /* "While you were away" is nothing I care about */
 .stream-item.has-recap {
     display: none !important;
+}
+
+/* Search results */
+.AdaptiveSearchPage div.Grid-cell.u-size1of3.u-lg-size1of4 {
+    display: none !important;
+}
+
+.AdaptiveSearchPage div.Grid-cell.u-size2of3.u-lg-size3of4 {
+    margin: auto !important;
+    display: block !important;
 }
 
 

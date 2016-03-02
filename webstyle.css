@@ -127,14 +127,20 @@ div[guidedhelpid="invitefriends"],
 }
 
 /* Search results */
-.AdaptiveSearchPage div.Grid-cell.u-size1of3.u-lg-size1of4 {
+.AdaptiveSearchPage div.Grid-cell.u-size1of3.u-lg-size1of4,
+.enhanced-mini-profile div.dashboard.dashboard-left {
     display: none !important;
 }
 
-.AdaptiveSearchPage div.Grid-cell.u-size2of3.u-lg-size3of4 {
+.AdaptiveSearchPage div.Grid-cell.u-size2of3.u-lg-size3of4,
+.AdaptiveSearchPage div.Grid-cell.u-size2of2.u-lg-size2of3,
+.route-home .content-main {
     margin: auto !important;
     display: block !important;
+    float: none !important;
 }
+
+
 
 
 /* GOOGLE+

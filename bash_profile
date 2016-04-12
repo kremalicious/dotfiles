@@ -66,3 +66,25 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+# ----------------------------------------------------------------------
+#  gpg-agent
+# ----------------------------------------------------------------------
+
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+
+
+# ----------------------------------------------------------------------
+#  Google Cloud SDK
+# ----------------------------------------------------------------------
+
+if [ -s ~/Code/google-cloud-sdk/ ]; then
+    source ~/Code/google-cloud-sdk/path.bash.inc
+    source ~/Code/google-cloud-sdk/completion.bash.inc
+fi

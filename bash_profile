@@ -57,6 +57,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 complete -C aws_completer aws
 
 
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
 # ----------------------------------------------------------------------
 #  rvm
 # ----------------------------------------------------------------------
@@ -69,11 +72,11 @@ complete -C aws_completer aws
 #  gpg-agent
 # ----------------------------------------------------------------------
 
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
+if [ -f "$HOME/.gnupg/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source "$HOME/.gnupg/.gpg-agent-info"
     export GPG_AGENT_INFO
 else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+    eval $(gpg-agent --daemon --write-env-file $HOME/.gnupg/.gpg-agent-info)
 fi
 
 
@@ -81,7 +84,7 @@ fi
 #  Google Cloud SDK
 # ----------------------------------------------------------------------
 
-if [ -s ~/Code/google-cloud-sdk/ ]; then
-    source ~/Code/google-cloud-sdk/path.bash.inc
-    source ~/Code/google-cloud-sdk/completion.bash.inc
+if [ -s "$HOME/Code/google-cloud-sdk/" ]; then
+    source "$HOME/Code/google-cloud-sdk/path.bash.inc"
+    source "$HOME/Code/google-cloud-sdk/completion.bash.inc"
 fi

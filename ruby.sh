@@ -7,9 +7,9 @@ curl -sSL https://get.rvm.io | bash
 rvm requirements
 
 # Install a Ruby
-rvm install 2.2.2
-rvm use --default 2.2.2
+rvm install 2.3.0
+rvm use --default 2.3.0
 rvm rubygems latest
 
 # Install gems
-gem install bundler jekyll ghi lunchy
+gem install bundler jekyll

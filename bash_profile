@@ -57,8 +57,13 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 complete -C aws_completer aws
 
 
+# ----------------------------------------------------------------------
+#  nvm
+# ----------------------------------------------------------------------
+
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
+
 
 # ----------------------------------------------------------------------
 #  rvm

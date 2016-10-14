@@ -13,11 +13,11 @@
 
 echo "$(tput setaf 136)"
 echo "Update Homebrew               "
-echo "=============================="
+echo "------------------------------"
 echo "$(tput sgr0)" # reset
 
 brew update
-brew upgrade --all
+brew upgrade
 brew cleanup
 
 
@@ -27,7 +27,7 @@ brew cleanup
 
 echo "$(tput setaf 136)"
 echo "Update npm                   "
-echo "============================="
+echo "------------------------------"
 echo "$(tput sgr0)" # reset
 
 # update npm itself
@@ -42,12 +42,12 @@ npm update -g
 
 echo "$(tput setaf 136)"
 echo "Update rvm                   "
-echo "============================="
+echo "------------------------------"
 echo "$(tput sgr0)" # reset
 
 # update rvm itself
-rvm get stable
-rvm reload
+# rvm get stable
+# rvm reload
 
 # update all gemsets
 rvm gemset update

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ########################################################################
 # bash_profile, basically from the whole internet
 # and a lot from @necolas, @mathiasbynens & @rtomayko
@@ -41,8 +43,8 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-    source "$(brew --prefix)/etc/bash_completion";
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+    source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
     source /etc/bash_completion;
 fi;
@@ -55,14 +57,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # aws-cli tab completion
 complete -C aws_completer aws
-
-
-# ----------------------------------------------------------------------
-#  nvm
-# ----------------------------------------------------------------------
-
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
 
 
 # ----------------------------------------------------------------------
@@ -82,14 +76,4 @@ if [ -f "$HOME/.gnupg/.gpg-agent-info" ] && [ -n "$(pgrep gpg-agent)" ]; then
     export GPG_AGENT_INFO
 else
     eval $(gpg-agent --daemon --write-env-file $HOME/.gnupg/.gpg-agent-info)
-fi
-
-
-# ----------------------------------------------------------------------
-#  Google Cloud SDK
-# ----------------------------------------------------------------------
-
-if [ -s "$HOME/Code/google-cloud-sdk/" ]; then
-    source "$HOME/Code/google-cloud-sdk/path.bash.inc"
-    source "$HOME/Code/google-cloud-sdk/completion.bash.inc"
 fi

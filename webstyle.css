@@ -13,6 +13,17 @@
     Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 */
 
+
+/* GITLAB
+   -----------------------------------------*/
+
+body.ui_charcoal {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: none !important;
+}
+
+
 /* GOOGLE SEARCH
    -----------------------------------------*/
 

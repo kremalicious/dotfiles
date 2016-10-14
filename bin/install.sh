@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # creates symlinks from the home directory to
 # any desired dotfiles in ~/dotfiles

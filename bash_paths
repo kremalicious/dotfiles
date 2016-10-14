@@ -1,18 +1,19 @@
+#!/usr/bin/env bash
+
 # adapted based on https://github.com/necolas/dotfiles/blob/master/shell/bash_paths
 
 # Directories to be prepended to PATH
 declare -a dirs_to_prepend=(
     "/usr/local/sbin"
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
-    "$HOME/.bin"
 )
 
 # Directories to be appended to PATH
 declare -a dirs_to_append=(
     "/usr/bin"
-    "$(brew --prefix coreutils)/libexec/gnubin" # Add brew-installed GNU core utilities bin
-    "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
+    "$HOME/.bin"
     "$HOME/.rvm/bin"
+    "$(brew --prefix node)/bin" # Add npm/yarn-installed package bin
 )
 
 # Prepend directories to PATH
@@ -39,3 +40,13 @@ export PATH
 
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code:~/Projects
+
+
+# ----------------------------------------------------------------------
+#  Google Cloud SDK
+# ----------------------------------------------------------------------
+
+if [ -s "$HOME/Code/google-cloud-sdk/" ]; then
+    source "$HOME/Code/google-cloud-sdk/path.bash.inc"
+    source "$HOME/Code/google-cloud-sdk/completion.bash.inc"
+fi

@@ -2,10 +2,17 @@
 
 
 #
-# OS X
+# macOS
 # -------------
 
+echo "$(tput setaf 136)"
+echo "Update macOS Apps               "
+echo "------------------------------"
+echo "$(tput sgr0)" # reset
+
 #sudo softwareupdate -i -a
+
+mas upgrade
 
 #
 # Homebrew

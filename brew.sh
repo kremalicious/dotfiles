@@ -31,6 +31,7 @@ brew install imagemagick
 brew install GraphicsMagick
 brew install tor
 brew install gsl
+brew install mas
 
 # Link gpg to gpg2
 ln -s /usr/local/bin/gpg2 /usr/local/bin/gpg

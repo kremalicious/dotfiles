@@ -32,6 +32,7 @@ brew install GraphicsMagick
 brew install tor
 brew install gsl
 brew install mas
+brew install rclone
 
 # Link gpg to gpg2
 ln -s /usr/local/bin/gpg2 /usr/local/bin/gpg

@@ -15,14 +15,8 @@
 dir=$DOTFILES_DIR
 
 # list of files/folders to symlink in homedir
-files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private tm_properties npmrc bin"
+files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin"
 
-
-# ----------------------------------------------------------------------
-# change to the dotfiles directory
-# ----------------------------------------------------------------------
-
-cd $dir
 
 # ----------------------------------------------------------------------
 # create symlinks from the homedir to any files in the dotfiles directory
@@ -51,7 +45,7 @@ echo "           Brewing all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-./brew.sh
+$dir/brew.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"
@@ -68,7 +62,7 @@ echo "             npm all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-./npm.sh
+$dir/npm.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"
@@ -85,7 +79,7 @@ echo "             Ruby all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-./ruby.sh
+$dir/ruby.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"

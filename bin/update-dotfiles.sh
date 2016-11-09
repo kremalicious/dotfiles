@@ -15,7 +15,7 @@
 dir=$DOTFILES_DIR
 
 # list of files/folders to symlink in homedir
-files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin"
+files="aliases bashrc bash_profile bash_paths bash_prompt editorconfig exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin"
 
 
 # ----------------------------------------------------------------------

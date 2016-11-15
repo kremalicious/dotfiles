@@ -46,7 +46,7 @@ export CDPATH=$CDPATH:~/Code:~/Projects
 #  Google Cloud SDK
 # ----------------------------------------------------------------------
 
-if [ -s "$HOME/Code/google-cloud-sdk/" ]; then
-    source "$HOME/Code/google-cloud-sdk/path.bash.inc"
-    source "$HOME/Code/google-cloud-sdk/completion.bash.inc"
-fi
+# if [ -s "$HOME/Code/google-cloud-sdk/" ]; then
+#     source "$HOME/Code/google-cloud-sdk/path.bash.inc"
+#     source "$HOME/Code/google-cloud-sdk/completion.bash.inc"
+# fi

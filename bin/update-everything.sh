@@ -53,8 +53,8 @@ echo "------------------------------"
 echo "$(tput sgr0)" # reset
 
 # update rvm itself
-# rvm get stable
-# rvm reload
+rvm get stable
+rvm reload
 
 # update all gemsets
 rvm gemset update
@@ -62,6 +62,16 @@ rvm gemset update
 # cleanup
 rvm cleanup all
 
+#
+# GPG
+# -------------
+
+echo "$(tput setaf 136)"
+echo "Refresh GPG keys              "
+echo "------------------------------"
+echo "$(tput sgr0)" # reset
+
+gpg --refresh-keys
 
 echo "$(tput setaf 64)" # green
 echo "-------------------------------"

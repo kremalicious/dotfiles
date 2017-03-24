@@ -12,13 +12,13 @@
 # http://rclone.org/commands/rclone_copy/
 # http://rclone.org/commands/rclone_sync/
 
-DEFAULTS_AMAZON='--exclude .DS_Store --transfers 2'
+DEFAULTS_AMAZON='--exclude .DS_Store'
 
 # Sync up Movies
 rclone sync $MOVIES_DIR amazon:/Movies $DEFAULTS_AMAZON
 
 # Sync up TV Shows
-rclone sync $TVSHOWS_DIR amazon:"/TV Shows" $DEFAULTS_AMAZON
+rclone sync "$TVSHOWS_DIR" amazon:"/TV Shows" $DEFAULTS_AMAZON
 
 # Sync up iTunes
 rclone sync $ITUNES_DIR amazon:/Music/iTunes $DEFAULTS_AMAZON

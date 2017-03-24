@@ -26,21 +26,38 @@ unset file;
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
+# Save multi-line commands as one command
+shopt -s cmdhist
+
+# Avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
 # fuck that you have new mail shit
 unset MAILCHECK
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2> /dev/null
 
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
-for option in autocd globstar; do
-    shopt -s "$option" 2> /dev/null;
-done;
+# Prepend cd to directory names automatically
+shopt -s autocd 2> /dev/null
+
+# Correct spelling errors during tab-completion
+shopt -s dirspell 2> /dev/null
+
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell 2> /dev/null
+
+# Update window size after every command
+shopt -s checkwinsize
+
+# Automatically trim long paths in the prompt (requires Bash 4.x)
+PROMPT_DIRTRIM=4
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
@@ -48,6 +65,18 @@ if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_
 elif [ -f /etc/bash_completion ]; then
     source /etc/bash_completion;
 fi;
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Treat hyphens and underscores as equivalent
+bind "set completion-map-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+bind "set mark-symlinked-directories on"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;

@@ -6,14 +6,15 @@
 declare -a dirs_to_prepend=(
     "/usr/local/sbin"
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
+    "$(brew --prefix node)/bin" # Add npm/yarn-installed package bin
+    "$(brew --prefix openssl)/bin" # Add newer OpenSSL
+    "$HOME/.bin"
+    "$HOME/.rvm/bin"
 )
 
 # Directories to be appended to PATH
 declare -a dirs_to_append=(
-    "/usr/bin"
-    "$HOME/.bin"
-    "$HOME/.rvm/bin"
-    "$(brew --prefix node)/bin" # Add npm/yarn-installed package bin
+    "/usr/bin"    
 )
 
 # Prepend directories to PATH

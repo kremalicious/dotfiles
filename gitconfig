@@ -59,6 +59,9 @@
 [fetch]
     prune = true
 
+[status]
+    showUntrackedFiles = all
+
 [color]
     diff = auto
     status = auto

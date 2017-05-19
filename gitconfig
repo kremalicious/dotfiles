@@ -10,10 +10,10 @@
 [user]
 	name = Matthias Kretschmann
 	email = m@kretschmann.io
-    signingkey = DD7831FC
+    signingKey = DD7831FC
 
 [commit]
-    gpgsign = true
+    gpgSign = true
 
 [gpg]
     program = gpg2

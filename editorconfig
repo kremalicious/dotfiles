@@ -8,6 +8,6 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[{**.js,package.json,.travis.yml}]
+[{**.json,.travis.yml}]
 indent_style = space
 indent_size = 2

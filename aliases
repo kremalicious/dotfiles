@@ -11,8 +11,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ~="cd ~"
 
-# Get into some servers FAST. Server, user & port are in .ssh/config
-alias krlc='ssh kremalicious'
+alias a='atom-beta .'
 
 # Update All The Things
 alias update='update-everything.sh'

@@ -34,9 +34,5 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool TRUE && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool FALSE && killall Finder"
 
-# install npm packages from the cache
-# ht: http://soledadpenades.com/2015/05/31/npmoffline-installing-npm-packages-from-the-cache/
-alias npmoffline="npm --cache-min 9999999 "
-
 # When there's need for nyaning around
 alias nyan="telnet nyancat.dakko.us"

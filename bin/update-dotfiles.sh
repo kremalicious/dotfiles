@@ -12,7 +12,7 @@
 # ----------------------------------------------------------------------
 
 # dotfiles directory
-dir=$DOTFILES_DIR
+cd ../
 
 # list of files/folders to symlink in homedir
 files="aliases bashrc bash_profile bash_paths bash_prompt editorconfig exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
@@ -33,7 +33,7 @@ done
 # ----------------------------------------------------------------------
 
 for file in $files; do
-    ln -s $dir/$file ~/.$file
+    ln -s $file ~/.$file
     echo "$(tput setaf 64)✓$(tput sgr0) Created symlink to $(tput setaf 37)$file$(tput sgr0)"
 done
 

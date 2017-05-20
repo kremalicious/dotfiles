@@ -1,8 +1,2 @@
-
-# Use european registry to be faster
-#registry = http://registry.npmjs.eu
-
-# Make npm less noisy
-# If only it would work...
-# https://github.com/npm/npm/issues/4186
-loglevel = warn
+loglevel=warn
+sign-git-tag=true

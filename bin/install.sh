@@ -7,16 +7,23 @@
 # https://github.com/michaeljsmalley/dotfiles/blob/master/makesymlinks.sh
 ########################################################################
 
+set e
+
 # ----------------------------------------------------------------------
 # Variables
 # ----------------------------------------------------------------------
 
 # dotfiles directory
-dir=$DOTFILES_DIR
+cd ../
 
 # list of files/folders to symlink in homedir
 files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
 
+# ----------------------------------------------------------------------
+# create the private file first, will be symlinked but ignored by git
+# ----------------------------------------------------------------------
+
+touch private
 
 # ----------------------------------------------------------------------
 # create symlinks from the homedir to any files in the dotfiles directory
@@ -24,17 +31,15 @@ files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfi
 # ----------------------------------------------------------------------
 
 for file in $files; do
-    ln -s $dir/$file ~/.$file
+    ln -s $file ~/.$file
     echo "$(tput setaf 64)✓$(tput sgr0) Created symlink to $(tput setaf 37)$file$(tput sgr0)"
 done
-
 
 # ----------------------------------------------------------------------
 # source what we just created
 # ----------------------------------------------------------------------
 
 source ~/.bash_profile
-
 
 # ----------------------------------------------------------------------
 # Homebrew
@@ -45,13 +50,12 @@ echo "           Brewing all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-$dir/brew.sh
+bin/install-brew.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
 echo "$(tput sgr0)" # reset
-
 
 # ----------------------------------------------------------------------
 # npm
@@ -62,13 +66,12 @@ echo "             npm all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-$dir/npm.sh
+bin/install-npm.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
 echo "$(tput sgr0)" # reset
-
 
 # ----------------------------------------------------------------------
 # Ruby
@@ -79,13 +82,12 @@ echo "             Ruby all the things. "
 echo "============================================="
 echo "$(tput sgr0)" # reset
 
-$dir/ruby.sh
+bin/install-ruby.sh
 
 echo "$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
 echo "$(tput sgr0)" # reset
-
 
 echo "$(tput setaf 64)" # green
 echo "============================================="

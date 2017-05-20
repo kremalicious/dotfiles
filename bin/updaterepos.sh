@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # 
 # Usage:
-# ./update_git_repos.sh [parent_directory] 
+# ./updaterepos.sh [parent_directory] 
 #
 #   example usage:
-#   ./update_git_repos.sh projects/ [MAKE SURE YOU USE / SLASHES]
+#   ./updaterepos.sh projects/ [MAKE SURE YOU USE / SLASHES]
 #
 # stolen from:
 # http://stackoverflow.com/a/36800741/733677

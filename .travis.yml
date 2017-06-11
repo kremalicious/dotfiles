@@ -1,0 +1,15 @@
+language: ruby
+
+os:
+  - osx
+  
+install:
+  - brew update
+  - brew install shellcheck
+
+script:
+  - shellcheck bash_*
+  - shellcheck bin/*.sh
+
+notifications:
+  email: false

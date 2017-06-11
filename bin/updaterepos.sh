@@ -13,7 +13,7 @@
 updateRepo() {
     local dir="$1"
     local original_dir="$2"
-    cd $dir # switch to the git repo
+    cd "$dir" # switch to the git repo
     repo_url=$(git config --get remote.origin.url)
     
     echo "$(tput setaf 136)Updating Repo: $dir with url: $repo_url$(tput sgr0)"

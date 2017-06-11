@@ -31,7 +31,7 @@ touch private
 # ----------------------------------------------------------------------
 
 for file in $files; do
-    ln -s $file ~/.$file
+    ln -s "$file" ~/."$file"
     echo "$(tput setaf 64)✓$(tput sgr0) Created symlink to $(tput setaf 37)$file$(tput sgr0)"
 done
 
@@ -45,52 +45,52 @@ source ~/.bash_profile
 # Homebrew
 # ----------------------------------------------------------------------
 
-echo "$(tput setaf 136)"
+"$(tput setaf 136)"
 echo "           Brewing all the things. "
 echo "============================================="
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
 bin/install-brew.sh
 
-echo "$(tput setaf 64)" # green
+"$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
 # ----------------------------------------------------------------------
 # npm
 # ----------------------------------------------------------------------
 
-echo "$(tput setaf 136)"
+"$(tput setaf 136)"
 echo "             npm all the things. "
 echo "============================================="
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
 bin/install-npm.sh
 
-echo "$(tput setaf 64)" # green
+"$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
 # ----------------------------------------------------------------------
 # Ruby
 # ----------------------------------------------------------------------
 
-echo "$(tput setaf 136)"
+"$(tput setaf 136)"
 echo "             Ruby all the things. "
 echo "============================================="
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
 bin/install-ruby.sh
 
-echo "$(tput setaf 64)" # green
+"$(tput setaf 64)" # green
 echo "---------------------------------------------"
 echo "                 ✓ done"
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset
 
-echo "$(tput setaf 64)" # green
+"$(tput setaf 64)" # green
 echo "============================================="
 echo "                 ✓ all done"
 echo "============================================="
-echo "$(tput sgr0)" # reset
+"$(tput sgr0)" # reset

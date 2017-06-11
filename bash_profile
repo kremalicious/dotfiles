@@ -14,7 +14,7 @@
 # Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{bash_paths,bash_prompt,exports,aliases,inputrc,private}; do
+for file in ~/.{exports,private,bash_paths,bash_prompt,aliases,inputrc}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done;
 unset file;

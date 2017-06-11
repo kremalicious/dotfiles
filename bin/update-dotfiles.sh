@@ -23,7 +23,7 @@ files="aliases bashrc bash_profile bash_paths bash_prompt editorconfig exports g
 # ----------------------------------------------------------------------
 
 for file in $files; do
-    rm ~/.$file
+    rm ~/."$file"
 done
 
 
@@ -33,7 +33,7 @@ done
 # ----------------------------------------------------------------------
 
 for file in $files; do
-    ln -s $file ~/.$file
+    ln -s "$file" ~/."$file"
     echo "$(tput setaf 64)✓$(tput sgr0) Created symlink to $(tput setaf 37)$file$(tput sgr0)"
 done
 

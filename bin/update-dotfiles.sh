@@ -12,7 +12,7 @@
 # ----------------------------------------------------------------------
 
 # dotfiles directory
-cd ../
+cd ../ || exit
 
 # list of files/folders to symlink in homedir
 files="aliases bashrc bash_profile bash_paths bash_prompt editorconfig exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"

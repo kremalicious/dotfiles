@@ -14,7 +14,7 @@ set e
 # ----------------------------------------------------------------------
 
 # dotfiles directory
-cd ../
+cd ../ || exit
 
 # list of files/folders to symlink in homedir
 files="aliases bashrc bash_profile bash_paths bash_prompt exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
@@ -45,52 +45,38 @@ source ~/.bash_profile
 # Homebrew
 # ----------------------------------------------------------------------
 
-"$(tput setaf 136)"
-echo "           Brewing all the things. "
-echo "============================================="
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)           Brewing all the things. "
+echo "=============================================$(tput sgr0)"
+"" # reset
 
 bin/install-brew.sh
 
-"$(tput setaf 64)" # green
-echo "---------------------------------------------"
-echo "                 ✓ done"
-"$(tput sgr0)" # reset
-
+echo "$(tput setaf 64)---------------------------------------------"
+echo "                 ✓ done$(tput sgr0)"
 # ----------------------------------------------------------------------
 # npm
 # ----------------------------------------------------------------------
 
-"$(tput setaf 136)"
-echo "             npm all the things. "
-echo "============================================="
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)             npm all the things. "
+echo "=============================================$(tput sgr0)"
 
 bin/install-npm.sh
 
-"$(tput setaf 64)" # green
-echo "---------------------------------------------"
-echo "                 ✓ done"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 64)---------------------------------------------"
+echo "                 ✓ done$(tput sgr0)"
 
 # ----------------------------------------------------------------------
 # Ruby
 # ----------------------------------------------------------------------
 
-"$(tput setaf 136)"
-echo "             Ruby all the things. "
-echo "============================================="
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)             Ruby all the things. "
+echo "=============================================$(tput sgr0)"
 
 bin/install-ruby.sh
 
-"$(tput setaf 64)" # green
-echo "---------------------------------------------"
-echo "                 ✓ done"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 64)---------------------------------------------"
+echo "                 ✓ done$(tput sgr0)"
 
-"$(tput setaf 64)" # green
-echo "============================================="
+echo "$(tput setaf 64)============================================="
 echo "                 ✓ all done"
-echo "============================================="
-"$(tput sgr0)" # reset
+echo "=============================================$(tput sgr0)"

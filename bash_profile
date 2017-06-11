@@ -63,6 +63,7 @@ PROMPT_DIRTRIM=4
 if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
     source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
+    # shellcheck disable=SC1091
     source /etc/bash_completion;
 fi;
 

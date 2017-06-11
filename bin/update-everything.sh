@@ -5,10 +5,9 @@
 # macOS
 # -------------
 
-"$(tput setaf 136)"
-echo "Update macOS Apps               "
-echo "------------------------------"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)
+      Update macOS Apps"
+echo "------------------------------$(tput sgr0)"
 
 #sudo softwareupdate -i -a
 
@@ -18,10 +17,9 @@ mas upgrade
 # Homebrew
 # -------------
 
-"$(tput setaf 136)"
-echo "Update Homebrew               "
-echo "------------------------------"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)
+      Update Homebrew"
+echo "------------------------------$(tput sgr0)"
 
 brew update
 brew upgrade
@@ -32,10 +30,8 @@ brew cleanup
 # npm
 # -------------
 
-"$(tput setaf 136)"
-echo "Update npm                   "
-echo "------------------------------"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136) Update npm"
+echo "------------------------------$(tput sgr0)"
 
 # update npm itself
 npm install npm -g
@@ -47,10 +43,9 @@ npm update -g
 # Ruby
 # -------------
 
-"$(tput setaf 136)"
-echo "Update rvm                   "
-echo "------------------------------"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)
+      Update rvm"
+echo "------------------------------$(tput sgr0)"
 
 # update rvm itself
 rvm get stable
@@ -66,14 +61,12 @@ rvm cleanup all
 # GPG
 # -------------
 
-"$(tput setaf 136)"
-echo "Refresh GPG keys              "
-echo "------------------------------"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 136)
+      Refresh GPG keys"
+echo "------------------------------$(tput sgr0)"
 
 gpg --refresh-keys
 
-"$(tput setaf 64)" # green
-echo "-------------------------------"
-echo " ✓ all done"
-"$(tput sgr0)" # reset
+echo "$(tput setaf 64)
+      -------------------------------"
+echo " ✓ all done$(tput sgr0)"

@@ -11,3 +11,6 @@ indent_size = 4
 [{**.json,.travis.yml}]
 indent_style = space
 indent_size = 2
+
+[{Makefile,Make,make}]
+indent_style = tab

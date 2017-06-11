@@ -94,3 +94,12 @@ complete -C aws_completer aws
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+# ----------------------------------------------------------------------
+#  ssh hack for SSH_AUTH_SOCK
+# ----------------------------------------------------------------------
+
+if [ -S "$SSH_AUTH_SOCK" ]; then
+    unset SSH_AUTH_SOCK
+fi

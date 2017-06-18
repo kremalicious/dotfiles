@@ -39,6 +39,18 @@ npm install npm -g
 # update all global packages
 npm update -g
 
+
+#
+# Atom
+# -------------
+
+echo "$(tput setaf 136) Update Atom packages"
+echo "------------------------------$(tput sgr0)"
+
+apm upgrade --no-confirm
+apm clean
+
+
 #
 # Ruby
 # -------------

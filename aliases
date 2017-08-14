@@ -12,6 +12,8 @@ alias ...="cd ../.."
 alias ~="cd ~"
 
 alias a='atom-beta .'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias s='subl .'
 
 # Update All The Things
 alias update='update-everything.sh'

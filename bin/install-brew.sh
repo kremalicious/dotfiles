@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # give me /usr/local first
-sudo chown -R "$USER" /usr/local
+#sudo chown -R "$USER" /usr/local
 
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -28,10 +28,8 @@ brew install node
 brew install wget
 brew install gpg
 brew install pinentry-mac
-brew install imagemagick
 brew install GraphicsMagick
 brew install tor
-brew install gsl
 brew install mas
 brew install rclone
 

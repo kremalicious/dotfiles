@@ -3,4 +3,4 @@
 # Installed from brewfile with node
 
 # install global stuff
-npm install -g bower grunt grunt-cli gulp nib stylus sass less
+npm install -g gulp nib stylus sass less xo eslint

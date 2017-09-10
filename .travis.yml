@@ -1,15 +1,21 @@
-language: ruby
+language: bash
 
-os:
-  - osx
-  
-install:
-  - brew update
-  - brew install shellcheck
+# Use container-based infrastructure for quicker build start-up
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - debian-sid    # Grab shellcheck from the Debian repo (o_O)
+    packages:
+    - shellcheck
 
 script:
-  - shellcheck bash_*
-  - shellcheck bin/*.sh
+  - bash -c 'shopt -s globstar; shellcheck **/bash_*'
+  - bash -c 'shopt -s globstar; shellcheck **/*.{sh,bash}'
+
+matrix:
+  fast_finish: true
 
 notifications:
   email: false

@@ -7,41 +7,28 @@
 # https://github.com/michaeljsmalley/dotfiles/blob/master/makesymlinks.sh
 ########################################################################
 
-# ----------------------------------------------------------------------
-# Variables
-# ----------------------------------------------------------------------
-
-# dotfiles directory
-cd ../ || exit
-
 # list of files/folders to symlink in homedir
-files="aliases bashrc bash_profile bash_paths bash_prompt editorconfig exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
+FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports editorconfig gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
 
+for FILE in $FILES; do
 
-# ----------------------------------------------------------------------
-# delete existing dotfiles in ~
-# ----------------------------------------------------------------------
+    # remove old symlinks if present
+    if [ -h "$HOME/.$FILE" ]; then
+        rm "$HOME/.$FILE"
+        echo "$(tput setaf 64)✓$(tput sgr0) Removed old symlink to $(tput setaf 37)$FILE$(tput sgr0)"
+    fi
 
-for file in $files; do
-    rm ~/."$file"
+    # symlink files
+    ln -s "$PWD/$FILE" "$HOME/.$FILE"
+    echo "$(tput setaf 64)✓$(tput sgr0) Created new symlink to $(tput setaf 37)$FILE$(tput sgr0)"
+
 done
-
-
-# ----------------------------------------------------------------------
-# create symlinks from the homedir to any files in the ~/dotfiles directory
-# specified in $files
-# ----------------------------------------------------------------------
-
-for file in $files; do
-    ln -s "$file" ~/."$file"
-    echo "$(tput setaf 64)✓$(tput sgr0) Created symlink to $(tput setaf 37)$file$(tput sgr0)"
-done
-
 
 # ----------------------------------------------------------------------
 # source what we just created
 # ----------------------------------------------------------------------
 
-source ~/.bash_profile
+# shellcheck source=/dev/null
+source "$HOME/.bash_profile"
 
 exit

@@ -9,15 +9,16 @@
 # https://github.com/rtomayko/dotfiles
 ########################################################################
 
+# shellcheck source=/dev/null
 
 # ----------------------------------------------------------------------
 # Load ~/.private, ~/.bash_prompt
 # ----------------------------------------------------------------------
 
-for file in ~/.{exports,private,bash_paths,bash_prompt,aliases,inputrc}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+for FILE in ~/.{bash_exports,bash_paths,bash_prompt,bash_aliases,private,inputrc}; do
+    [ -r "$FILE" ] && [ -f "$FILE" ] && source "$FILE"
 done;
-unset file;
+unset FILE;
 
 # ----------------------------------------------------------------------
 #  SHELL OPTIONS

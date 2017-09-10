@@ -12,4 +12,6 @@ rvm use --default 2.4.0
 rvm rubygems latest
 
 # Install gems
-gem install bundler jekyll
+gem install \
+    bundler \
+    jekyll

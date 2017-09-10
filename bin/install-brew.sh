@@ -13,9 +13,10 @@ brew update
 brew upgrade --all
 
 # Install what we need
-brew install coreutils
-brew install bash
-brew install bash-completion2
+brew install \
+    coreutils \
+    bash \
+    bash-completion2
 
 # Switch to using brew-installed bash as default shell
 if ! grep -F -q '/usr/local/bin/bash' /etc/shells; then
@@ -23,15 +24,21 @@ if ! grep -F -q '/usr/local/bin/bash' /etc/shells; then
   chsh -s /usr/local/bin/bash;
 fi;
 
-brew install git
-brew install node
-brew install wget
-brew install gpg
-brew install pinentry-mac
-brew install GraphicsMagick
-brew install tor
-brew install mas
-brew install rclone
+brew install \
+    git \
+    node \
+    wget \
+    gpg \
+    pinentry-mac \
+    tor \
+    mas \
+    rclone \
+    rsync \
+    shellcheck \
+    yarn \
+    ipfs \
+    ethereum \
+    parity
 
 # Remove outdated versions from the cellar.
 brew cleanup

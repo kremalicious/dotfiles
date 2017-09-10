@@ -183,14 +183,15 @@ div.Qd.Gb.qd.pP.EX {
 }
 
 
-/* CODESHIP
+/* MEDIUM
    -----------------------------------------*/
 
-.widget.-parallelci-trial,
-[data-modal-src="/modals/parallelci_trial"] {
+.js-postShareWidget,
+.u-zIndexMetabar.js-stickyFooter,
+.metabar.metabar--spacer.js-metabarSpacer {
     display: none !important;
 }
 
-#content .widget.-help h2 {
-    font-weight: 600
+.metabar.js-metabar {
+    position: relative !important;
 }

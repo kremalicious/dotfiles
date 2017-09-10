@@ -62,6 +62,7 @@ PROMPT_DIRTRIM=4
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+    # shellcheck source=/dev/null
     source "$(brew --prefix)/share/bash-completion/bash_completion";
 elif [ -f /etc/bash_completion ]; then
     # shellcheck disable=SC1091
@@ -95,6 +96,7 @@ complete -C aws_completer aws
 # ----------------------------------------------------------------------
 
 # Load RVM into a shell session *as a function*
+# shellcheck source=/dev/null
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 

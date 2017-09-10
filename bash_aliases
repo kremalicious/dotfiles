@@ -23,10 +23,10 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 
 # Copy SSH public key to pasteboard
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '$(tput setaf 64)✓ Public SSH key copied to pasteboard.$(tput sgr0)\n'"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '\$(tput setaf 64)✓ Public SSH key copied to pasteboard.\$(tput sgr0)\n'"
 
 # Copy GPG public key to pasteboard
-alias gpgpubkey="gpg --export --armor 0xDD7831FC | pbcopy | printf '$(tput setaf 64)✓ Public GPG key copied to pasteboard.$(tput sgr0)\n'"
+alias gpgpubkey="gpg --export --armor 0xDD7831FC | pbcopy | printf '\$(tput setaf 64)✓ Public GPG key copied to pasteboard.\$(tput sgr0)\n'"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

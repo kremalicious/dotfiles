@@ -54,7 +54,7 @@ echo "$(tput setaf 240)Updating git repos in directory: $directory_to_update $(t
 
 count=0
 
-for dir in $(find "$directory_to_update" -maxdepth 4 -type d -name .git | xargs -n 1 dirname); do
+for dir in $(find "$directory_to_update" -maxdepth 4 -type d -name .git -print0 | xargs -n -0 1 dirname); do
     updateRepo "$dir" "$directory_to_update"
     ((count+=1))
 done

@@ -12,8 +12,8 @@ alias ...="cd ../.."
 alias ~="cd ~"
 
 alias a='atom-beta .'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias s='subl .'
+alias s='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl .'
+alias c='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code .'
 
 # Update All The Things
 alias update='update-everything.sh'

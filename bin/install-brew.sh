@@ -30,6 +30,7 @@ brew install \
     wget \
     gpg \
     pinentry-mac \
+    openssl \
     tor \
     mas \
     rclone \

@@ -71,19 +71,18 @@ if tput setaf 1 &> /dev/null; then
     bold=$(tput bold);
     dim=$(tput setaf 8);
     reset=$(tput sgr0);
-    # Tomorrow colors, taken from https://github.com/Slava/vim-colors-tomorrow/blob/master/colors/tomorrow.vim
-    black=$(tput setaf 236);
-    gray=$(tput setaf 242);
-    blue=$(tput setaf 109);
-    green=$(tput setaf 143);
-    cyan=$(tput setaf 43);
-    orange=$(tput setaf 173);
-    purple=$(tput setaf 125);
-    red=$(tput setaf 167);
-    magenta=$(tput setaf 139);
-    violet=$(tput setaf 139);
+    black=$(tput setaf 16);
+    gray=$(tput setaf 8);
+    blue=$(tput setaf 4);
+    green=$(tput setaf 2);
+    cyan=$(tput setaf 6);
+    orange=$(tput setaf 3);
+    purple=$(tput setaf 5);
+    red=$(tput setaf 1);
+    magenta=$(tput setaf 13);
+    violet=$(tput setaf 13);
     white=$(tput setaf 15);
-    yellow=$(tput setaf 136);
+    yellow=$(tput setaf 11);
 else
     bold='';
     reset="\e[0m";

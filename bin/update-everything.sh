@@ -6,7 +6,7 @@
 # -------------
 
 echo ""
-echo "$(tput setaf 136) Update macOS Apps"
+echo "$(tput setaf 3) Update macOS Apps"
 echo "------------------------------$(tput sgr0)"
 
 #sudo softwareupdate -i -a
@@ -19,7 +19,7 @@ mas upgrade
 
 echo ""
 echo ""
-echo "$(tput setaf 136) Update Homebrew"
+echo "$(tput setaf 3) Update Homebrew"
 echo "------------------------------$(tput sgr0)"
 
 brew update
@@ -33,7 +33,7 @@ brew cleanup
 
 echo ""
 echo ""
-echo "$(tput setaf 136) Update npm"
+echo "$(tput setaf 3) Update npm"
 echo "------------------------------$(tput sgr0)"
 
 # update npm itself
@@ -43,18 +43,6 @@ npm install npm -g
 npm update -g
 
 
-#
-# Atom
-# -------------
-
-echo ""
-echo ""
-echo "$(tput setaf 136) Update Atom packages"
-echo "------------------------------$(tput sgr0)"
-
-apm upgrade --no-confirm
-apm clean
-
 
 #
 # Ruby
@@ -62,7 +50,7 @@ apm clean
 
 echo ""
 echo ""
-echo "$(tput setaf 136) Update rvm"
+echo "$(tput setaf 3) Update rvm"
 echo "------------------------------$(tput sgr0)"
 
 # update rvm itself
@@ -81,11 +69,11 @@ rvm cleanup all
 
 echo ""
 echo ""
-echo "$(tput setaf 136) Refresh GPG keys"
+echo "$(tput setaf 3) Refresh GPG keys"
 echo "------------------------------$(tput sgr0)"
 
 gpg --refresh-keys
 
 echo ""
-echo "$(tput setaf 64) -------------------------------"
+echo "$(tput setaf 2) -------------------------------"
 echo " ✓ all done$(tput sgr0)"

@@ -10,7 +10,7 @@
 set e
 
 # list of files/folders to symlink in homedir
-FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf"
+FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf vimrc"
 
 # ----------------------------------------------------------------------
 # create the private file first, will be symlinked but ignored by git

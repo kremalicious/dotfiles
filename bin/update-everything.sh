@@ -63,6 +63,19 @@ rvm gemset update
 # cleanup
 rvm cleanup all
 
+
+#
+# ClamAV
+# -------------
+
+echo ""
+echo ""
+echo "$(tput setaf 3) Update ClamAV Database"
+echo "------------------------------$(tput sgr0)"
+
+freshclam -v
+
+
 #
 # GPG
 # -------------

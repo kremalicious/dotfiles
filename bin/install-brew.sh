@@ -39,7 +39,8 @@ brew install \
     yarn \
     ipfs \
     ethereum \
-    parity
+    parity \
+    clamav
 
 # Remove outdated versions from the cellar.
 brew cleanup

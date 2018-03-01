@@ -41,3 +41,6 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool FALSE && kil
 
 # When there's need for nyaning around
 alias nyan="telnet nyancat.dakko.us"
+
+# Virus scan with ClamAV
+alias virusscan="clamscan -r --bell -i /"

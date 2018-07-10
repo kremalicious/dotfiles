@@ -2,7 +2,7 @@
 
 > 👩‍🎤 personal dotfiles, scrambled together from the interwebz. Highly macOS oriented.
 
-[![Build Status](https://travis-ci.org/kremalicious/dotfiles.svg?branch=master)](https://travis-ci.org/kremalicious/dotfiles)
+[![Build Status](https://travis-ci.com/kremalicious/dotfiles.svg?branch=master)](https://travis-ci.com/kremalicious/dotfiles)
 
 ![hackerman](https://cloud.githubusercontent.com/assets/90316/26279873/9240a9d8-3dc0-11e7-9353-783b36ae6aff.jpg)
 

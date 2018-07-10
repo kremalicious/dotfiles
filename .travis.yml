@@ -3,12 +3,9 @@ language: bash
 # Use container-based infrastructure for quicker build start-up
 sudo: false
 
-addons:
-  apt:
-    sources:
-    - debian-sid    # Grab shellcheck from the Debian repo (o_O)
-    packages:
-    - shellcheck
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install shellcheck
 
 script:
   - bash -c 'shopt -s globstar; shellcheck **/bash*'

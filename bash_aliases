@@ -44,3 +44,6 @@ alias nyan="telnet nyancat.dakko.us"
 
 # Virus scan with ClamAV
 alias virusscan="clamscan -r --bell -i /"
+
+# Docker & Docker Compose
+alias dc="docker-compose"

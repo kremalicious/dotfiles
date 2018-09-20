@@ -104,9 +104,10 @@ complete -C aws_completer aws
 #  nvm
 # ----------------------------------------------------------------------
 
-# export NVM_DIR="$HOME/.nvm"
-# . "/usr/local/opt/nvm/nvm.sh"
-
+if [ -s "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    . "/usr/local/opt/nvm/nvm.sh"
+fi
 
 # ----------------------------------------------------------------------
 #  ssh hack for SSH_AUTH_SOCK

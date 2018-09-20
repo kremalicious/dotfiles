@@ -7,8 +7,8 @@ curl -sSL https://get.rvm.io | bash
 rvm requirements
 
 # Install a Ruby
-rvm install 2.4.0
-rvm use --default 2.4.0
+rvm install 2.5
+rvm use --default 2.5
 rvm rubygems latest
 
 # Install gems

@@ -11,7 +11,7 @@ echo "------------------------------$(tput sgr0)"
 
 #sudo softwareupdate -i -a
 
-mas upgrade
+# mas upgrade
 
 #
 # Homebrew
@@ -48,20 +48,20 @@ npm update -g
 # Ruby
 # -------------
 
-echo ""
-echo ""
-echo "$(tput setaf 3) Update rvm"
-echo "------------------------------$(tput sgr0)"
+# echo ""
+# echo ""
+# echo "$(tput setaf 3) Update rvm"
+# echo "------------------------------$(tput sgr0)"
 
-# update rvm itself
-rvm get stable
-rvm reload
+# # update rvm itself
+# rvm get stable
+# rvm reload
 
-# update all gemsets
-rvm gemset update
+# # update all gemsets
+# rvm gemset update
 
-# cleanup
-rvm cleanup all
+# # cleanup
+# rvm cleanup all
 
 
 #

@@ -8,10 +8,10 @@ declare -a dirs_to_prepend=(
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
     "$(brew --prefix node)/bin" # Add npm/yarn-installed package bin
     "$(brew --prefix openssl)/bin" # Add newer OpenSSL
-    "$GOPATH/bin"
-    "$GOROOT/bin"
+    # "$GOPATH/bin"
+    # "$GOROOT/bin"
     "$HOME/.bin"
-    "$HOME/.rvm/bin"
+    # "$HOME/.rvm/bin"
 )
 
 # Directories to be appended to PATH
@@ -42,7 +42,7 @@ unset dirs_to_prepend dirs_to_append
 export PATH
 
 # define CDPATHs which are autocompleted from when doing cd
-export CDPATH=$CDPATH:~/Code:~/Projects
+export CDPATH=$CDPATH:~/Code
 
 
 # ----------------------------------------------------------------------

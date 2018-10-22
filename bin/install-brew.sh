@@ -29,17 +29,15 @@ brew install \
     node \
     wget \
     gpg \
+    nvm \
     pinentry-mac \
     openssl \
     tor \
-    mas \
     rclone \
     rsync \
     shellcheck \
     yarn \
     ipfs \
-    ethereum \
-    parity \
     clamav
 
 # Remove outdated versions from the cellar.

@@ -61,13 +61,12 @@ shopt -s checkwinsize
 PROMPT_DIRTRIM=4
 
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-    # shellcheck source=/dev/null
-    source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-    # shellcheck disable=SC1091
-    source /etc/bash_completion;
-fi;
+if type brew 2&>/dev/null; then
+    for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
+        # shellcheck disable=SC1091
+        source "$completion_file"
+    done
+fi
 
 # Perform file completion in a case insensitive fashion
 bind "set completion-ignore-case on"

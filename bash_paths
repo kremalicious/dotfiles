@@ -8,8 +8,10 @@ declare -a dirs_to_prepend=(
     "/usr/local/bin" # Ensure that this bin always takes precedence over `/usr/bin`
     # "$(brew --prefix node)/bin" # Add npm/yarn-installed package bin
     "$(brew --prefix openssl)/bin" # Add newer OpenSSL
-    # "$GOPATH/bin"
-    # "$GOROOT/bin"
+    "$(brew --prefix ruby)/bin"
+    "/usr/local/lib/ruby/gems/2.5.0/bin"
+    "$GOPATH/bin"
+    "$GOROOT/bin"
     "$HOME/.bin"
     # "$HOME/.rvm/bin"
 )

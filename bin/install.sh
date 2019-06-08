@@ -10,7 +10,7 @@
 set e
 
 # list of files/folders to symlink in homedir
-FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports gemrc gitconfig gitignore hushlogin inputrc private npmrc bin tmux.conf vimrc"
+FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports gitconfig gitignore hushlogin inputrc private bin tmux.conf vimrc"
 
 # ----------------------------------------------------------------------
 # create the private file first, will be symlinked but ignored by git
@@ -61,13 +61,13 @@ echo "                 ✓ done$(tput sgr0)"
 # Ruby
 # ----------------------------------------------------------------------
 
-echo "$(tput setaf 136)             Ruby all the things. "
-echo "=============================================$(tput sgr0)"
+# echo "$(tput setaf 136)             Ruby all the things. "
+# echo "=============================================$(tput sgr0)"
 
-./bin/install-ruby.sh
+# ./bin/install-ruby.sh
 
-echo "$(tput setaf 64)---------------------------------------------"
-echo "                 ✓ done$(tput sgr0)"
+# echo "$(tput setaf 64)---------------------------------------------"
+# echo "                 ✓ done$(tput sgr0)"
 
 echo "$(tput setaf 64)============================================="
 echo "                 ✓ all done"

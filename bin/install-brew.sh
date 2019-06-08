@@ -30,13 +30,15 @@ brew install \
     wget \
     gpg \
     nvm \
+    pandoc \
     pinentry-mac \
     openssl \
     tor \
+    python \
     rclone \
     rsync \
+    ruby \
     shellcheck \
-    yarn \
     ipfs \
     clamav
 

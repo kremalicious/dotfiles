@@ -17,5 +17,9 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 # export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 # go
-# export GOPATH=$HOME/.go
-# export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+export GOROOT=/usr/local/opt/go/libexec
+
+# ffi
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"

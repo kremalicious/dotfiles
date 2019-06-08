@@ -25,15 +25,18 @@
     excludesfile = ~/.gitignore
 	quotepath = false
 
-    # Handle umlauts and such better on OS X
+    # Handle umlauts and such better on macOS
     #   for whatever crazy reason this explicitly
     #   has to be set to false so tracked files with
     #   special characters don't get treated as untracked
     precomposeunicode = false
 
-    # Make `git rebase` safer on OS X
+    # Make `git rebase` safer on macOS
     # More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
+
+    # Be case sensitive on case insensitive systems
+    ignorecase = false
 
 [alias]
     c  = clone --recursive

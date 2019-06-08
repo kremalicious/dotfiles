@@ -60,12 +60,24 @@ shopt -s checkwinsize
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=4
 
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done
+
 # Add tab completion for many Bash commands
+if command -v brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+	source "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion;
+fi
+
 if type brew 2&>/dev/null; then
-    for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
-        # shellcheck disable=SC1091
-        source "$completion_file"
-    done
+  for completion_file in "$(brew --prefix)"/etc/bash_completion.d/*; do
+    source "$completion_file"
+  done
 fi
 
 # Perform file completion in a case insensitive fashion
@@ -105,7 +117,8 @@ complete -C aws_completer aws
 
 if [ -s "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
-    . "/usr/local/opt/nvm/nvm.sh"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # ----------------------------------------------------------------------

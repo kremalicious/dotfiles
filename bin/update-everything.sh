@@ -5,12 +5,11 @@
 # macOS
 # -------------
 
-echo ""
-echo "$(tput setaf 3) Update macOS Apps"
-echo "------------------------------$(tput sgr0)"
+# echo ""
+# echo "$(tput setaf 3) Update macOS Apps"
+# echo "------------------------------$(tput sgr0)"
 
-#sudo softwareupdate -i -a
-
+# sudo softwareupdate -i -a
 # mas upgrade
 
 #
@@ -28,13 +27,16 @@ brew cleanup
 
 
 #
-# npm
+# Node.js & npm
 # -------------
 
 echo ""
 echo ""
 echo "$(tput setaf 3) Update npm"
 echo "------------------------------$(tput sgr0)"
+
+# Update to latest nvm Node.js
+nvm install node
 
 # update npm itself
 npm install npm -g

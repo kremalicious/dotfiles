@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # https://github.com/sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure
@@ -7,6 +9,13 @@ DISABLE_UPDATE_PROMPT="true"
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 HIST_STAMPS="yyyy-mm-dd"
+
+# https://carlosbecker.com/posts/speeding-up-zsh/
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 # Oh My Zsh
 export ZSH="/Users/m/.oh-my-zsh"
@@ -18,3 +27,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.exports
 source ~/.aliases
 source ~/.private
+
+# zprof

@@ -10,7 +10,7 @@
 set e
 
 # list of files/folders to symlink in homedir
-FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports gitconfig gitignore hushlogin inputrc private bin tmux.conf vimrc"
+FILES="aliases exports private zshrc gitconfig gitignore hushlogin bin tmux.conf vimrc"
 
 # ----------------------------------------------------------------------
 # create the private file first, will be symlinked but ignored by git
@@ -38,13 +38,6 @@ for FILE in $FILES; do
 done
 
 # ----------------------------------------------------------------------
-# source what we just created
-# ----------------------------------------------------------------------
-
-# shellcheck source=/dev/null
-source "$HOME/.bash_profile"
-
-# ----------------------------------------------------------------------
 # Homebrew
 # ----------------------------------------------------------------------
 
@@ -57,17 +50,22 @@ echo "=============================================$(tput sgr0)"
 echo "$(tput setaf 64)---------------------------------------------"
 echo "                 ✓ done$(tput sgr0)"
 
+# Switch to using brew-installed zsh as default shell
+if ! grep -F -q '/usr/local/bin/zsh' /etc/shells; then
+  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/zsh;
+fi;
+
+# install https://github.com/robbyrussell/oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+npm i -g pure-prompt
+
 # ----------------------------------------------------------------------
-# Ruby
+# source what we just created
 # ----------------------------------------------------------------------
 
-# echo "$(tput setaf 136)             Ruby all the things. "
-# echo "=============================================$(tput sgr0)"
-
-# ./bin/install-ruby.sh
-
-# echo "$(tput setaf 64)---------------------------------------------"
-# echo "                 ✓ done$(tput sgr0)"
+# shellcheck source=/dev/null
+source "$HOME/.zshrc"
 
 echo "$(tput setaf 64)============================================="
 echo "                 ✓ all done"

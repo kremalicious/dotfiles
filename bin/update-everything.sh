@@ -32,8 +32,11 @@ brew cleanup
 
 echo ""
 echo ""
-echo "$(tput setaf 3) Update npm"
+echo "$(tput setaf 3) Update Node.js & npm"
 echo "------------------------------$(tput sgr0)"
+
+# shellcheck source=/dev/null
+[ -s "$HOME/.nvm" ] && . "$HOME/.nvm/nvm.sh"
 
 # Update to latest nvm Node.js
 nvm install node

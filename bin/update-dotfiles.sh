@@ -8,7 +8,7 @@
 ########################################################################
 
 # list of files/folders to symlink in homedir
-FILES="bash_aliases bashrc bash_profile bash_paths bash_prompt bash_exports editorconfig gitconfig gitignore hushlogin inputrc private bin tmux.conf vimrc"
+FILES="aliases exports private zshrc editorconfig gitconfig gitignore hushlogin bin tmux.conf vimrc"
 
 for FILE in $FILES; do
 
@@ -29,6 +29,6 @@ done
 # ----------------------------------------------------------------------
 
 # shellcheck source=/dev/null
-source "$HOME/.bash_profile"
+source "$HOME/.zshrc"
 
 exit

@@ -1,0 +1,25 @@
+# Set architecture flags
+export ARCHFLAGS="-arch x86_64"
+
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
+
+# ---------------------------------------------------
+#  PATH
+# ---------------------------------------------------
+
+export PATH=$HOME/.bin:/usr/local/bin:"$(brew --prefix openssl)/bin":"$(brew --prefix ruby)/bin":"/usr/local/lib/ruby/gems/2.6.0/bin":"$(brew --prefix python)/libexec/bin":"$HOME/.go/bin":"$(brew --prefix go)/libexec/bin":$PATH
+# define CDPATHs which are autocompleted from when doing cd
+export CDPATH=$CDPATH:~/Code
+
+# nvm
+if [ -s "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
+
+# pip should only run if there is a virtualenv currently activated
+#export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache

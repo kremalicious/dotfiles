@@ -6,7 +6,6 @@ before_install:
   - sudo apt-get install -y shellcheck
 
 script:
-  - bash -c 'shopt -s globstar; shellcheck **/bash*'
   - bash -c 'shopt -s globstar; shellcheck **/*.sh'
 
 matrix:

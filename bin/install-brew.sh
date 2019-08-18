@@ -15,7 +15,9 @@ brew upgrade --all
 # Install what we need
 brew install \
     coreutils \
-    zsh
+    zsh \
+    zsh-syntax-highlighting \
+    zsh-autosuggestions \
     git \
     node \
     wget \

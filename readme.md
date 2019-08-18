@@ -1,6 +1,6 @@
 # dotfiles
 
-> 👩‍🎤 personal dotfiles, scrambled together from the interwebz. Highly macOS oriented, with zsh, oh-my-zsh, Homebrew.
+> 👩‍🎤 personal dotfiles, scrambled together from the interwebz. Highly macOS oriented, with zsh, Homebrew.
 
 [![Build Status](https://travis-ci.com/kremalicious/dotfiles.svg?branch=master)](https://travis-ci.com/kremalicious/dotfiles)
 

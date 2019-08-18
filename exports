@@ -1,15 +1,25 @@
+#!/usr/bin/env bash
+
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
+#!/usr/bin/env bash
 
 # ---------------------------------------------------
 #  PATH
 # ---------------------------------------------------
 
-export PATH=$HOME/.bin:/usr/local/bin:"$(brew --prefix openssl)/bin":"$(brew --prefix ruby)/bin":"/usr/local/lib/ruby/gems/2.6.0/bin":"$(brew --prefix python)/libexec/bin":"$HOME/.go/bin":"$(brew --prefix go)/libexec/bin":$PATH
+PATH_OPENSSL=$(brew --prefix openssl)/bin
+PATH_RUBY=$(brew --prefix ruby)/bin
+PATH_GEMS=/usr/local/lib/ruby/gems/2.6.0/bin
+PATH_PYTHON=$(brew --prefix python)/libexec/bin
+PATH_GO=$(brew --prefix go)/libexec/bin
+
+export GOPATH=$HOME/.go/
+export PATH=$HOME/.bin:/usr/local/bin:$PATH_OPENSSL:$PATH_RUBY:$PATH_GEMS:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code
 

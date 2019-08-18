@@ -50,19 +50,17 @@ echo "=============================================$(tput sgr0)"
 echo "$(tput setaf 64)---------------------------------------------"
 echo "                 ✓ done$(tput sgr0)"
 
+# ----------------------------------------------------------------------
+# source what we just created
+# ----------------------------------------------------------------------
+
 # Switch to using brew-installed zsh as default shell
 if ! grep -F -q '/usr/local/bin/zsh' /etc/shells; then
   echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
   chsh -s /usr/local/bin/zsh;
 fi;
 
-# install https://github.com/robbyrussell/oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 npm i -g pure-prompt
-
-# ----------------------------------------------------------------------
-# source what we just created
-# ----------------------------------------------------------------------
 
 # shellcheck source=/dev/null
 source "$HOME/.zshrc"

@@ -6,20 +6,6 @@ PURE_GIT_DOWN_ARROW=↓
 PURE_GIT_UP_ARROW=↑
 prompt pure
 
-# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2767420
-autoload -Uz compinit
-
-setopt EXTENDEDGLOB
-for dump in $ZSH_COMPDUMP(#qN.m1); do
-  compinit
-  if [[ -s "$dump" && (! -s "$dump.zwc" || "$dump" -nt "$dump.zwc") ]]; then
-    zcompile "$dump"
-  fi
-  echo "Initializing Completions..."
-done
-unsetopt EXTENDEDGLOB
-compinit -C
-
 CASE_SENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_AUTO_TITLE="true"
@@ -53,8 +39,31 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+# Highlight the current autocomplete option
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Better SSH/SCP/Rsync Autocomplete
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ -r ~/.ssh/known_hosts ]]; then
+  h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
+fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
+fi
+
+# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2767420
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+  touch ~/.zcompdump
+else
+  compinit -C
+fi
 
 # Other
 setopt prompt_subst
@@ -65,5 +74,6 @@ source ~/.aliases
 source ~/.private
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source <(kubectl completion zsh)
 
 # zprof

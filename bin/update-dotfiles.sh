@@ -24,11 +24,4 @@ for FILE in $FILES; do
 
 done
 
-# ----------------------------------------------------------------------
-# source what we just created
-# ----------------------------------------------------------------------
-
-# shellcheck source=/dev/null
-source "$HOME/.zshrc"
-
 exit

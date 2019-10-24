@@ -51,7 +51,7 @@ echo "$(tput setaf 64)---------------------------------------------"
 echo "                 ✓ done$(tput sgr0)"
 
 # ----------------------------------------------------------------------
-# source what we just created
+# Prompt
 # ----------------------------------------------------------------------
 
 # Switch to using brew-installed zsh as default shell
@@ -61,9 +61,6 @@ if ! grep -F -q '/usr/local/bin/zsh' /etc/shells; then
 fi;
 
 npm i -g pure-prompt
-
-# shellcheck source=/dev/null
-source "$HOME/.zshrc"
 
 echo "$(tput setaf 64)============================================="
 echo "                 ✓ all done"

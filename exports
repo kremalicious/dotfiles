@@ -16,9 +16,10 @@ PATH_RUBY=$(brew --prefix ruby)/bin
 PATH_GEMS=/usr/local/lib/ruby/gems/2.6.0/bin
 PATH_PYTHON=$(brew --prefix python)/libexec/bin
 PATH_GO=$(brew --prefix go)/libexec/bin
+PATH_RUST=$HOME/.cargo/bin
 
 export GOPATH=$HOME/.go/
-export PATH=$HOME/.bin:/usr/local/bin:$PATH_OPENSSL:$PATH_RUBY:$PATH_GEMS:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH_OPENSSL:$PATH_RUBY:$PATH_GEMS:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH_RUST:$PATH
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code
 

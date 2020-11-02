@@ -12,14 +12,14 @@ export LANG="en_US"
 # ---------------------------------------------------
 
 PATH_OPENSSL=$(brew --prefix openssl)/bin
-PATH_RUBY=$(brew --prefix ruby)/bin
-PATH_GEMS=/usr/local/lib/ruby/gems/2.6.0/bin
+# PATH_RUBY=$(brew --prefix ruby)/bin
+# PATH_GEMS=/usr/local/lib/ruby/gems/2.6.0/bin
 PATH_PYTHON=$(brew --prefix python)/libexec/bin
 PATH_GO=$(brew --prefix go)/libexec/bin
-PATH_RUST=$HOME/.cargo/bin
+#PATH_RUST=$HOME/.cargo/bin
 
 export GOPATH=$HOME/.go/
-export PATH=$HOME/.bin:/usr/local/bin:$PATH_OPENSSL:$PATH_RUBY:$PATH_GEMS:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH_RUST:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH_OPENSSL:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code
 
@@ -31,12 +31,12 @@ NODE_GLOBALS+=("node")
 NODE_GLOBALS+=("nvm")
 
 load_nvm () {
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 }
 
 for cmd in "${NODE_GLOBALS[@]}"; do
-    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
+  eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
 done
 
 # pip should only run if there is a virtualenv currently activated

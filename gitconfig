@@ -50,8 +50,9 @@
 
     # Remove branches that have already been merged with master
     # a.k.a. ‘delete merged’
-    dm = "!git branch --merged master | grep -v '\\* master' | xargs -n 1 git branch -d"
-
+    dm = "!git branch --merged main | grep -v '\\* main' | xargs -n 1 git branch -d"
+    dma = "!git branch --merged master | grep -v '\\* master' | xargs -n 1 git branch -d"
+    
     uncommit = reset --soft HEAD^
     unstage  = reset HEAD
     yolo     = push --force
@@ -88,3 +89,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[pull]
+	rebase = false
+[gpg]
+	program = /usr/local/bin/gpg

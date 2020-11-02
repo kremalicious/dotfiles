@@ -13,23 +13,21 @@
     Application Support/Google/Chrome/Default/User StyleSheets/Custom.css
 */
 
-
 /* GOOGLE SEARCH
    -----------------------------------------*/
 
 /* Ads */
 #tads,
 #bottomads {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* GMAIL
    -----------------------------------------*/
 
 /* more space at top of mails */
 div.AO div.aeF {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 /* hide google footer */
@@ -37,30 +35,29 @@ div.AO div.aeF {
 td.Bu div.aeV,
 td.Bu div.aeU,
 td.Bu div.ae3 {
-    display: none !important;
+  display: none !important;
 }
 
 /* fuck you too, social sidebar and share thingy */
 td.Bu.y3,
 #gbgs3,
 .gb_7a.gb_ya.gb_g {
-    display: none !important;
+  display: none !important;
 }
 
 /* center more stuff */
 div.gB.xu table.cf.FVrZGe,
 div.ip.adB,
 .hx .h7 .Bk .G2 .adn {
-    max-width: 768px;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  max-width: 768px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Ads */
 body.aAU .mq {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* CHROME
    -----------------------------------------*/
@@ -68,9 +65,8 @@ body.aAU .mq {
 /* fuck you google for putting your ads
    in my browser start page */
 #prm-pt {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* GITHUB
    -----------------------------------------*/
@@ -97,52 +93,33 @@ body.aAU .mq {
 .commit-id,
 .branch-name,
 input.url-field {
-    font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier, monospace !important;
+  font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier,
+    monospace !important;
 }
-
 
 /* TWITTER
    -----------------------------------------*/
 
 /* Nice try, Twitter */
 div.promoted-tweet {
-    display: none !important;
+  display: none !important;
 }
 
 /* Discover menu, Who to follow, Similiar, Trends */
-li[data-global-action="discover"],
-.dashboard > .module.wtf-module.js-wtf-module.has-content,
-div[guidedhelpid="invitefriends"],
-.module.trends,
-.ProfileWTFAndTrends,
-.ScrollBump--recentlyFollowed,
-.WhoToFollow,
-.Footer,
-.SidebarCommonModules {
-    display: none !important;
+[data-testid="sidebarColumn"],
+[aria-label="Timeline: Trending now"],
+[aria-label="Who to follow"],
+[data-testid="DMDrawer"] {
+  visibility: hidden !important;
 }
 
-/* "While you were away" is nothing I care about */
-.stream-item.has-recap {
-    display: none !important;
+[data-testid="sidebarColumn"] form {
+  visibility: visible !important;
 }
 
-/* Search results */
-.AdaptiveSearchPage div.Grid-cell.u-size1of3.u-lg-size1of4,
-.enhanced-mini-profile div.dashboard.dashboard-left {
-    display: none !important;
+main[role="main"] {
+  margin-left: 5% !important;
 }
-
-.AdaptiveSearchPage div.Grid-cell.u-size2of3.u-lg-size3of4,
-.AdaptiveSearchPage div.Grid-cell.u-size2of2.u-lg-size2of3,
-.route-home .content-main {
-    margin: auto !important;
-    display: block !important;
-    float: none !important;
-}
-
-
-
 
 /* GOOGLE+
    -----------------------------------------*/
@@ -152,9 +129,8 @@ div[guidedhelpid="celebritysuggestions"],
 div.o6.jea,
 a.gb_Db.gbp1.gb_N,
 div.Qd.Gb.qd.pP.EX {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* FACEBOOK
    -----------------------------------------*/
@@ -168,9 +144,8 @@ div.Qd.Gb.qd.pP.EX {
 #developerNav,
 #groupsNav,
 #navItem_app_2356318349 {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* STACK OVERFLOW ET AL.
    -----------------------------------------*/
@@ -179,9 +154,8 @@ div.Qd.Gb.qd.pP.EX {
 #newsletter-ad,
 #recent-badges,
 .everyonelovesstackoverflow {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* MEDIUM
    -----------------------------------------*/
@@ -189,9 +163,9 @@ div.Qd.Gb.qd.pP.EX {
 .js-postShareWidget,
 .u-zIndexMetabar.js-stickyFooter,
 .metabar.metabar--spacer.js-metabarSpacer {
-    display: none !important;
+  display: none !important;
 }
 
 .metabar.js-metabar {
-    position: relative !important;
+  position: relative !important;
 }

@@ -68,10 +68,6 @@ fi
 # Other
 setopt prompt_subst
 
-# User configuration
-source ~/.exports
-source ~/.aliases
-source ~/.private
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(kubectl completion zsh)

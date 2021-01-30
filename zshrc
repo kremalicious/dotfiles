@@ -1,17 +1,25 @@
 # zmodload zsh/zprof
 
+#
+# Prompt
 # https://github.com/sindresorhus/pure
+#
 autoload -U promptinit; promptinit
 PURE_GIT_DOWN_ARROW=↓
 PURE_GIT_UP_ARROW=↑
+# PURE_PROMPT_SYMBOL=🦑
 prompt pure
+zstyle :prompt:pure:git:stash show yes
+export CLICOLOR=1
 
 CASE_SENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 
+#
 # History
+#
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=50000
@@ -23,13 +31,19 @@ setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
 
+#
 # Changing directories
+#
 setopt auto_cd
 setopt auto_pushd
 unsetopt pushd_ignore_dups
 setopt pushdminus
 
+#
 # Completion
+#
+autoload -Uz compinit; compinit
+
 setopt auto_menu
 setopt always_to_end
 setopt complete_in_word
@@ -56,20 +70,11 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
 fi
 
-# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2767420
-autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit
-  touch ~/.zcompdump
-else
-  compinit -C
-fi
-
-# Other
-setopt prompt_subst
-
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
-# zprof
+#
+# Other
+#
+setopt prompt_subst

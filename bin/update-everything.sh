@@ -39,10 +39,12 @@ echo "------------------------------$(tput sgr0)"
 [ -s "$HOME/.nvm" ] && . "$HOME/.nvm/nvm.sh"
 
 # Update to latest nvm Node.js
-nvm install node
+nvm install node --reinstall-packages-from=node
+nvm alias default node
 
 # update npm itself
-npm install npm -g
+nvm install-latest-npm
+# npm install npm -g
 
 # update all global packages
 npm update -g

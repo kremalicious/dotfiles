@@ -2,7 +2,7 @@
 
 > 👩‍🎤 personal dotfiles, scrambled together from the interwebz. Highly macOS oriented, with zsh, Homebrew.
 
-[![Build Status](https://travis-ci.com/kremalicious/dotfiles.svg?branch=master)](https://travis-ci.com/kremalicious/dotfiles)
+[![Build Status](https://github.com/kremalicious/dotfiles/workflows/CI/badge.svg)](https://github.com/kremalicious/dotfiles/actions)
 
 ![hackerman](https://cloud.githubusercontent.com/assets/90316/26279873/9240a9d8-3dc0-11e7-9353-783b36ae6aff.jpg)
 
@@ -13,6 +13,7 @@ Clone this repository and execute the install script to symlink respective dotfi
 ```bash
 git clone git@github.com:kremalicious/dotfiles.git
 cd dotfiles
+
 ./bin/install.sh
 ```
 

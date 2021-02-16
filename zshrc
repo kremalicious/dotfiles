@@ -17,6 +17,10 @@ DISABLE_UPDATE_PROMPT="true"
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 
+# Skip forward/back a word with opt-arrow
+bindkey '^[f' forward-word
+bindkey '^[b' backward-word
+
 #
 # History
 #

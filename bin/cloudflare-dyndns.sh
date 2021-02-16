@@ -12,6 +12,7 @@
  function updateIp {
 
    # IPv4 A record
+   # https://unix.stackexchange.com/a/81699/125382
    IPADDRv4=$(dig @resolver4.opendns.com myip.opendns.com +short)
    echo "Public IPv4: $IPADDRv4"
 

@@ -14,7 +14,9 @@ alias n='nova .'
 alias update='update-everything.sh'
 
 # IP addresses
-alias ip="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
+# https://unix.stackexchange.com/a/81699/37512
+alias ip="dig @resolver4.opendns.com myip.opendns.com +short"
+alias ip6="dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6"
 alias iplocal="ipconfig getifaddr en0"
 
 # Copy SSH public key to pasteboard

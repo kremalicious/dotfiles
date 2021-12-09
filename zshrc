@@ -46,7 +46,13 @@ setopt pushdminus
 #
 # Completion
 #
-autoload -Uz compinit; compinit
+autoload -Uz compinit
+
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
 
 setopt auto_menu
 setopt always_to_end
@@ -74,7 +80,7 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
 fi
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source <(kubectl completion zsh)
 
@@ -82,3 +88,9 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Other
 #
 setopt prompt_subst
+
+source ~/.exports
+source ~/.aliases
+source ~/.private
+
+# zprof

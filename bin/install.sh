@@ -60,8 +60,6 @@ if ! grep -F -q '/usr/local/bin/zsh' /etc/shells; then
   chsh -s /usr/local/bin/zsh;
 fi;
 
-npm i -g pure-prompt
-
 echo "$(tput setaf 64)============================================="
 echo "                 ✓ all done"
 echo "=============================================$(tput sgr0)"

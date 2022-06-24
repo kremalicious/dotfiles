@@ -4,7 +4,7 @@
 #sudo chown -R "$USER" /usr/local
 
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Make sure we’re using the latest Homebrew
 brew update
@@ -19,13 +19,13 @@ brew install \
     zsh-syntax-highlighting \
     zsh-autosuggestions \
     git \
-    node \
     wget \
     gpg \
     nvm \
     pinentry-mac \
     openssl \
     tor \
+    pure \
     python \
     rclone \
     rsync \

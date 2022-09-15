@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Set architecture flags
-export ARCHFLAGS="-arch x86_64"
-
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
@@ -11,11 +8,11 @@ export LANG="en_US"
 #  PATH
 # ---------------------------------------------------
 
-PATH_OPENSSL=$(brew --prefix openssl)/bin
+PATH_OPENSSL=/usr/local/opt/openssl/bin
 # PATH_RUBY=$(brew --prefix ruby)/bin
 # PATH_GEMS=/usr/local/lib/ruby/gems/2.6.0/bin
-PATH_PYTHON=$(brew --prefix python)/libexec/bin
-PATH_GO=$(brew --prefix go)/libexec/bin
+PATH_PYTHON=/usr/local/opt/python/libexec/bin
+PATH_GO=/usr/local/opt/go/libexec/bin
 #PATH_RUST=$HOME/.cargo/bin
 
 export GOPATH=$HOME/.go/

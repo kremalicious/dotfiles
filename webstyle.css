@@ -68,40 +68,12 @@ body.aAU .mq {
   display: none !important;
 }
 
-/* GITHUB
-   -----------------------------------------*/
-
-.file-code code,
-.file-code pre,
-.commits code,
-.commits pre,
-.markdown-body pre,
-.markdown-body code,
-.diff-line-code,
-#files .file .meta .info,
-.file-box .meta .info,
-.diff-line-num,
-.blob-line-nums,
-.commit .sha-block,
-.commit .sha,
-.news .alert .branch-link,
-.repository-with-sidebar .repository-sidebar input.clone,
-.comment-body code,
-.comment-body pre,
-.commit-message code,
-.commit-sha,
-.commit-id,
-.branch-name,
-input.url-field {
-  font-family: "Source Code Pro", Consolas, "Liberation Mono", Courier,
-    monospace !important;
-}
-
 /* TWITTER
    -----------------------------------------*/
 
 /* Nice try, Twitter */
-div.promoted-tweet {
+div.promoted-tweet,
+[data-testid="placementTracking"] {
   display: none !important;
 }
 
@@ -117,10 +89,6 @@ div.promoted-tweet {
   visibility: visible !important;
 }
 
-main[role="main"] {
-  margin-left: 5% !important;
-}
-
 /* GOOGLE+
    -----------------------------------------*/
 
@@ -129,21 +97,6 @@ div[guidedhelpid="celebritysuggestions"],
 div.o6.jea,
 a.gb_Db.gbp1.gb_N,
 div.Qd.Gb.qd.pP.EX {
-  display: none !important;
-}
-
-/* FACEBOOK
-   -----------------------------------------*/
-
-#facebook .ego_column,
-#facebook #adsNav,
-#facebook #appsNav,
-#pagelet_friends_online,
-#navItem_app_357937250942127,
-#navItem_app_140472815972081,
-#developerNav,
-#groupsNav,
-#navItem_app_2356318349 {
   display: none !important;
 }
 

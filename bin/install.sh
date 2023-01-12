@@ -43,7 +43,6 @@ done
 
 echo "$(tput setaf 136)           Brewing all the things. "
 echo "=============================================$(tput sgr0)"
-"" # reset
 
 ./bin/install-brew.sh
 

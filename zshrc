@@ -80,8 +80,14 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
 fi
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ $(uname -m) == 'arm64' ]]; then
+  PATH_HOMEBREW=/opt/homebrew
+else
+  PATH_HOMEBREW=/usr/local
+fi
+
+source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source <(kubectl completion zsh)
 
 #

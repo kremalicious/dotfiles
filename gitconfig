@@ -10,7 +10,7 @@
 [user]
 	name = Matthias Kretschmann
 	email = m@kretschmann.io
-    signingKey = DD7831FC
+    signingKey = BD3C1F3EDD7831FC
 
 [commit]
     gpgSign = true
@@ -60,6 +60,12 @@
 [fetch]
     prune = true
 
+[pull]
+	rebase = false
+
+[init]
+	defaultBranch = main
+
 [status]
     showUntrackedFiles = all
 
@@ -89,9 +95,4 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[pull]
-	rebase = false
-[gpg]
-	program = /usr/local/bin/gpg
-[init]
-	defaultBranch = main
+

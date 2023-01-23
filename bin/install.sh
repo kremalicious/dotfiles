@@ -54,9 +54,9 @@ echo "                 ✓ done$(tput sgr0)"
 # ----------------------------------------------------------------------
 
 # Switch to using brew-installed zsh as default shell
-if ! grep -F -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/zsh;
+if ! grep -F -q '/opt/homebrew/bin/zsh' /etc/shells; then
+  echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells;
+  chsh -s /opt/homebrew/bin/zsh;
 fi;
 
 echo "$(tput setaf 64)============================================="

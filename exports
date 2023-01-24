@@ -17,6 +17,8 @@ else
   PATH_HOMEBREW=/usr/local
 fi
 
+export PATH_HOMEBREW
+
 PATH_OPENSSL=$PATH_HOMEBREW/opt/openssl/bin
 # PATH_RUBY=$(brew --prefix ruby)/bin
 # PATH_GEMS=$PATH_HOMEBREW/lib/ruby/gems/2.6.0/bin

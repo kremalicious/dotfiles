@@ -1,19 +1,16 @@
 #!/bin/bash
 
-# give me /usr/local first
-#sudo chown -R "$USER" /usr/local
-
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Make sure we’re using the latest Homebrew
-brew update
-
-# Upgrade any already-installed formulae
-brew upgrade --all
+if [[ $(uname -m) == 'arm64' ]]; then
+  PATH_HOMEBREW=/opt/homebrew
+else
+  PATH_HOMEBREW=/usr/local
+fi
 
 # Install what we need
-brew install \
+$PATH_HOMEBREW/bin/brew install \
     coreutils \
     zsh \
     zsh-syntax-highlighting \
@@ -34,4 +31,4 @@ brew install \
     clamav
 
 # Remove outdated versions from the cellar.
-brew cleanup
+$PATH_HOMEBREW/bin/brew cleanup

@@ -54,9 +54,15 @@ echo "                 ✓ done$(tput sgr0)"
 # ----------------------------------------------------------------------
 
 # Switch to using brew-installed zsh as default shell
-if ! grep -F -q '/opt/homebrew/bin/zsh' /etc/shells; then
-  echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells;
-  chsh -s /opt/homebrew/bin/zsh;
+if [[ $(uname -m) == 'arm64' ]]; then
+  PATH_HOMEBREW=/opt/homebrew
+else
+  PATH_HOMEBREW=/usr/local
+fi
+
+if ! grep -F -q "$PATH_HOMEBREW/bin/zsh" /etc/shells; then
+  echo "$PATH_HOMEBREW/bin/zsh" | sudo tee -a /etc/shells;
+  chsh -s $PATH_HOMEBREW/bin/zsh;
 fi;
 
 echo "$(tput setaf 64)============================================="

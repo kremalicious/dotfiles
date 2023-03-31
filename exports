@@ -26,8 +26,8 @@ PATH_PYTHON=$PATH_HOMEBREW/opt/python/libexec/bin
 PATH_GO=$PATH_HOMEBREW/opt/go/libexec/bin
 #PATH_RUST=$HOME/.cargo/bin
 
-export GOPATH=$HOME/.go/
-export PATH=$HOME/.bin:/$PATH_HOMEBREW/bin:$PATH_OPENSSL:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH
+export GOPATH=$HOME/.go
+export PATH=$HOME/.bin:$PATH_HOMEBREW/bin:$PATH_OPENSSL:$PATH_PYTHON:$GOPATH/bin:$PATH_GO:$PATH
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code
 

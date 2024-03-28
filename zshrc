@@ -98,5 +98,3 @@ setopt prompt_subst
 source ~/.exports
 source ~/.aliases
 source ~/.private
-
-# zprof

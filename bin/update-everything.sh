@@ -27,12 +27,12 @@ brew cleanup
 
 
 #
-# Node.js & npm
+# Node.js & npm (nvm)
 # -------------
 
 echo ""
 echo ""
-echo "$(tput setaf 3) Update Node.js & npm"
+echo "$(tput setaf 3) Update Node.js & npm (nvm)"
 echo "------------------------------$(tput sgr0)"
 
 # shellcheck source=/dev/null
@@ -44,12 +44,6 @@ nvm alias default node
 
 # update npm itself
 nvm install-latest-npm
-# npm install npm -g
-
-# update all global packages
-npm update -g
-
-
 
 #
 # Ruby

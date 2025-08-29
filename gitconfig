@@ -36,7 +36,7 @@
     trustctime = false
 
     # Be case sensitive on case insensitive systems
-    ignorecase = false
+	ignorecase = false
 
 [alias]
     c  = clone --recursive
@@ -78,21 +78,16 @@
 
 # Set Kaleidoscope as diff and merge tool
 [diff]
-    tool = Kaleidoscope
-[difftool]
-    prompt = false
+	tool = Kaleidoscope
 [difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+	trustExitCode = true
 [merge]
 	tool = Kaleidoscope
-[mergetool]
-    prompt = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-
+	trustExitCode = true
+[mergetool]
+	prompt = false

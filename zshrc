@@ -4,6 +4,7 @@
 # Prompt
 # https://github.com/sindresorhus/pure
 #
+stty sane
 autoload -U promptinit; promptinit
 PURE_GIT_DOWN_ARROW=↓
 PURE_GIT_UP_ARROW=↑
@@ -54,11 +55,6 @@ done
 
 compinit -C
 
-setopt auto_menu
-setopt always_to_end
-setopt complete_in_word
-unsetopt flow_control
-unsetopt menu_complete
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' use-cache 1
@@ -67,6 +63,13 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 
 # Highlight the current autocomplete option
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+setopt auto_menu
+setopt always_to_end
+setopt complete_in_word
+setopt prompt_subst
+unsetopt flow_control
+unsetopt menu_complete
 
 # Better SSH/SCP/Rsync Autocomplete
 h=()
@@ -90,11 +93,9 @@ source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source <(kubectl completion zsh)
 
-#
-# Other
-#
-setopt prompt_subst
-
 source ~/.exports
 source ~/.aliases
 source ~/.private
+
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"

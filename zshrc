@@ -93,9 +93,12 @@ source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source <(kubectl completion zsh)
 
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
 source ~/.exports
 source ~/.aliases
 source ~/.private
-
-# Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"

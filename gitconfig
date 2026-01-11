@@ -58,10 +58,14 @@
     yolo     = push --force
 
 [fetch]
-    prune = true
+	prune = true
 
 [pull]
-	rebase = false
+	rebase = true
+	ff = only
+
+[rebase]
+    autoStash = true
 
 [init]
 	defaultBranch = main
@@ -91,3 +95,9 @@
 	trustExitCode = true
 [mergetool]
 	prompt = false
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

@@ -49,20 +49,17 @@ else
 fi
 
 # ----------------------------------------------------------------------
-# Set zsh as default shell
+# Set zsh as default shell (skip in non-interactive/devcontainer)
 # ----------------------------------------------------------------------
 
 echo "---------------------------------------------"
-echo "Setting up zsh..."
 
 if command -v zsh >/dev/null 2>&1; then
     ZSH_PATH=$(command -v zsh)
+    echo "✓ zsh found at $ZSH_PATH"
 
-    # Change default shell
     if [ "$SHELL" != "$ZSH_PATH" ]; then
-        chsh -s "$ZSH_PATH" && echo "✓ Set zsh as default shell" || echo "⚠ Failed to set zsh as default shell (try: chsh -s $ZSH_PATH)"
-    else
-        echo "✓ zsh is already the default shell"
+        echo "  To set as default: chsh -s $ZSH_PATH"
     fi
 else
     echo "⚠ zsh not found, install it first (apt install zsh)"

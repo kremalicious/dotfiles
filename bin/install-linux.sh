@@ -58,11 +58,6 @@ echo "Setting up zsh..."
 if command -v zsh >/dev/null 2>&1; then
     ZSH_PATH=$(command -v zsh)
 
-    # Add zsh to /etc/shells if not present
-    if ! grep -qF "$ZSH_PATH" /etc/shells 2>/dev/null; then
-        echo "$ZSH_PATH" | sudo tee -a /etc/shells >/dev/null && echo "✓ Added zsh to /etc/shells"
-    fi
-
     # Change default shell
     if [ "$SHELL" != "$ZSH_PATH" ]; then
         chsh -s "$ZSH_PATH" && echo "✓ Set zsh as default shell"

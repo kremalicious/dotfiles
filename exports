@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# OS detection for cross-platform support
+export UNAME_SYSTEM=$(uname -s)
+
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
@@ -8,27 +11,30 @@ export LANG="en_US"
 #  PATH
 # ---------------------------------------------------
 
-# Homebrew path differs between Intel/Apple Silicon
-# See https://apple.stackexchange.com/questions/437618/why-is-homebrew-installed-in-opt-homebrew-on-apple-silicon-macs
-# Hardcoded paths because `brew --prefix ...` is slow
-if [[ $(uname -m) == 'arm64' ]]; then
-  PATH_HOMEBREW=/opt/homebrew
-else
-  PATH_HOMEBREW=/usr/local
-fi
-
-export PATH_HOMEBREW
-
-PATH_OPENSSL=$PATH_HOMEBREW/opt/openssl/bin
-# PATH_RUBY=$(brew --prefix ruby)/bin
-# PATH_GEMS=$PATH_HOMEBREW/lib/ruby/gems/2.6.0/bin
-PATH_PYTHON=$PATH_HOMEBREW/opt/python/libexec/bin
-PATH_GO=$PATH_HOMEBREW/opt/go/libexec/bin
-#PATH_RUST=$HOME/.cargo/bin
-
 export GOPATH=$HOME/.go
 export BUNPATH=$HOME/.bun
-export PATH=$HOME/.bin:$PATH_HOMEBREW/bin:$BUNPATH/bin:$GOPATH/bin:$PATH_PYTHON:$PATH_GO:$PATH
+
+if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
+  # Homebrew path differs between Intel/Apple Silicon
+  # See https://apple.stackexchange.com/questions/437618/why-is-homebrew-installed-in-opt-homebrew-on-apple-silicon-macs
+  # Hardcoded paths because `brew --prefix ...` is slow
+  if [[ $(uname -m) == 'arm64' ]]; then
+    PATH_HOMEBREW=/opt/homebrew
+  else
+    PATH_HOMEBREW=/usr/local
+  fi
+
+  export PATH_HOMEBREW
+
+  PATH_OPENSSL=$PATH_HOMEBREW/opt/openssl/bin
+  PATH_PYTHON=$PATH_HOMEBREW/opt/python/libexec/bin
+  PATH_GO=$PATH_HOMEBREW/opt/go/libexec/bin
+
+  export PATH=$HOME/.bin:$PATH_HOMEBREW/bin:$BUNPATH/bin:$GOPATH/bin:$PATH_PYTHON:$PATH_GO:$PATH
+else
+  # Linux: simpler PATH setup
+  export PATH=$HOME/.bin:$HOME/.local/bin:$BUNPATH/bin:$GOPATH/bin:$PATH
+fi
 
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code

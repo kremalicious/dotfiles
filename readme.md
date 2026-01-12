@@ -8,16 +8,25 @@
 
 ## Installation
 
-Clone this repository and execute the install script to symlink respective dotfiles into `~/` and run installation of Homebrew, Ruby & npm:
+### macOS
+
+Full setup with Homebrew, zsh plugins, and all dotfiles:
 
 ```bash
 git clone git@github.com:kremalicious/dotfiles.git
 cd dotfiles
-
 ./bin/install.sh
 ```
 
-Have a look at the [install.sh](bin/install.sh) script to see what's happening. Installation assumes macOS and will fail on other systems.
+### Linux
+
+Minimal setup (zsh, git, vim only):
+
+```bash
+git clone git@github.com:kremalicious/dotfiles.git
+cd dotfiles
+./bin/install-linux.sh
+```
 
 ## Update
 

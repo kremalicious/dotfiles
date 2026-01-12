@@ -83,22 +83,27 @@ if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
 fi
 
-if [[ $(uname -m) == 'arm64' ]]; then
-  PATH_HOMEBREW=/opt/homebrew
-else
-  PATH_HOMEBREW=/usr/local
+# Source exports first (sets UNAME_SYSTEM)
+source ~/.exports
+source ~/.aliases
+[ -f ~/.private ] && source ~/.private
+
+# macOS: Homebrew plugins and tools
+if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
+  if [[ $(uname -m) == 'arm64' ]]; then
+    PATH_HOMEBREW=/opt/homebrew
+  else
+    PATH_HOMEBREW=/usr/local
+  fi
+
+  [ -f $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  [ -f $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+    source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+  # Scaleway CLI autocomplete initialization.
+  command -v scw >/dev/null 2>&1 && eval "$(scw autocomplete script shell=zsh)"
 fi
-
-source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source <(kubectl completion zsh)
-
-# Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-source ~/.exports
-source ~/.aliases
-source ~/.private

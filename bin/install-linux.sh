@@ -41,9 +41,9 @@ echo "---------------------------------------------"
 echo "Installing Pure prompt..."
 
 if command -v npm >/dev/null 2>&1; then
-    npm install --global pure-prompt && echo "✓ Installed pure-prompt via npm"
+    npm install --global pure-prompt && echo "✓ Installed pure-prompt via npm" || echo "⚠ Failed to install pure-prompt via npm"
 elif command -v bun >/dev/null 2>&1; then
-    bun install --global pure-prompt && echo "✓ Installed pure-prompt via bun"
+    bun install --global pure-prompt && echo "✓ Installed pure-prompt via bun" || echo "⚠ Failed to install pure-prompt via bun"
 else
     echo "⚠ Neither npm nor bun found, skipping pure-prompt install"
 fi
@@ -60,7 +60,7 @@ if command -v zsh >/dev/null 2>&1; then
 
     # Change default shell
     if [ "$SHELL" != "$ZSH_PATH" ]; then
-        chsh -s "$ZSH_PATH" && echo "✓ Set zsh as default shell"
+        chsh -s "$ZSH_PATH" && echo "✓ Set zsh as default shell" || echo "⚠ Failed to set zsh as default shell (try: chsh -s $ZSH_PATH)"
     else
         echo "✓ zsh is already the default shell"
     fi

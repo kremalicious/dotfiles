@@ -90,7 +90,7 @@ source ~/.aliases
 
 # macOS: Homebrew plugins and tools
 if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
-  if [[ $(uname -m) == 'arm64' ]]; then
+  if [[ $(uname -m) == "arm64" ]]; then
     PATH_HOMEBREW=/opt/homebrew
   else
     PATH_HOMEBREW=/usr/local
@@ -106,4 +106,4 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
 fi
 
 # bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -s "$BUNPATH/_bun" ] && source "$BUNPATH/_bun"

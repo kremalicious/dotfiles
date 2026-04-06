@@ -7,39 +7,50 @@ export UNAME_SYSTEM=$(uname -s)
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
+# required for GPG passphrase prompts to work in terminal
+export GPG_TTY=$(tty)
+
 # ---------------------------------------------------
 #  PATH
 # ---------------------------------------------------
 
-export GOPATH=$HOME/.go
+GOPATH=$HOME/.go
 export BUNPATH=$HOME/.bun
+
+# Common path entries (order = priority)
+path_parts=("$HOME/.bin" "$HOME/.local/bin")
 
 if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
   # Homebrew path differs between Intel/Apple Silicon
-  # See https://apple.stackexchange.com/questions/437618/why-is-homebrew-installed-in-opt-homebrew-on-apple-silicon-macs
   # Hardcoded paths because `brew --prefix ...` is slow
   if [[ $(uname -m) == 'arm64' ]]; then
     PATH_HOMEBREW=/opt/homebrew
   else
     PATH_HOMEBREW=/usr/local
   fi
-
   export PATH_HOMEBREW
 
-  PATH_OPENSSL=$PATH_HOMEBREW/opt/openssl/bin
-  PATH_PYTHON=$PATH_HOMEBREW/opt/python/libexec/bin
-  PATH_GO=$PATH_HOMEBREW/opt/go/libexec/bin
-
-  export PATH=$HOME/.bin:$PATH_HOMEBREW/bin:$BUNPATH/bin:$GOPATH/bin:$PATH_PYTHON:$PATH_GO:$PATH
+  path_parts+=(
+    "$PATH_HOMEBREW/bin"
+    "$BUNPATH/bin"
+    "$GOPATH/bin"
+    # unversioned python/pip for convenience
+    "$PATH_HOMEBREW/opt/python/libexec/bin"
+  )
 else
-  # Linux: simpler PATH setup
-  export PATH=$HOME/.bin:$HOME/.local/bin:$BUNPATH/bin:$GOPATH/bin:$PATH
+  path_parts+=("$BUNPATH/bin" "$GOPATH/bin")
 fi
+
+PATH=$(IFS=:; echo "${path_parts[*]}"):$PATH
+export PATH
 
 # define CDPATHs which are autocompleted from when doing cd
 export CDPATH=$CDPATH:~/Code
 
-# nvm
+# ---------------------------------------------------
+#  nvm
+# ---------------------------------------------------
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -70,10 +81,11 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# ---------------------------------------------------
+#  Python
+# --------------------------------------------------
+
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-export GPG_TTY=$(tty)
-

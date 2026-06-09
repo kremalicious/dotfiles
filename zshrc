@@ -94,13 +94,13 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
     source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   [ -f $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
     source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-  # Scaleway CLI autocomplete initialization.
-  command -v scw >/dev/null 2>&1 && eval "$(scw autocomplete script shell=zsh)"
 fi
 
 # bun completions
-[ -s "$BUNPATH/_bun" ] && source "$BUNPATH/_bun"
+[ -f "$BUNPATH/_bun" ] && source "$BUNPATH/_bun"
+
+# Scaleway CLI autocomplete
+command -v scw >/dev/null 2>&1 && eval "$(scw autocomplete script shell=zsh)"
 
 # OrbStack: command-line tools and integration
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+[ -f ~/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh

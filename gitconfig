@@ -8,8 +8,8 @@
 #     name =
 
 [user]
-	name = Matthias Kretschmann
-	email = m@kretschmann.io
+  name = Matthias Kretschmann
+  email = m@kretschmann.io
   signingKey = BD3C1F3EDD7831FC
 
 [commit]
@@ -20,7 +20,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-	quotepath = false
+  quotepath = false
 
   # Handle umlauts and such better on macOS
   #   for whatever crazy reason this explicitly
@@ -33,7 +33,7 @@
   trustctime = false
 
   # Be case sensitive on case insensitive systems
-	ignorecase = false
+  ignorecase = false
 
 [alias]
   c  = clone --recursive
@@ -54,17 +54,17 @@
   yolo     = push --force
 
 [fetch]
-	prune = true
+  prune = true
 
 [pull]
-	rebase = true
-	ff = only
+  rebase = true
+  ff = only
 
 [rebase]
   autoStash = true
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [status]
   showUntrackedFiles = all
@@ -77,10 +77,10 @@
   ui = auto
 
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 
 # Include macOS-specific config (credential helper, diff/merge tools)
 # Silently ignored if file doesn't exist

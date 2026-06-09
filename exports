@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # OS detection for cross-platform support
-export UNAME_SYSTEM=$(uname -s)
+UNAME_SYSTEM=$(uname -s); export UNAME_SYSTEM
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
 # required for GPG passphrase prompts to work in terminal
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty); export GPG_TTY
 
 # ---------------------------------------------------
 #  PATH

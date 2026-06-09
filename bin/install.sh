@@ -7,10 +7,10 @@
 # https://github.com/michaeljsmalley/dotfiles/blob/master/makesymlinks.sh
 ########################################################################
 
-set e
+set -e
 
 # list of files/folders to symlink in homedir
-FILES="aliases exports private zshrc zprofile gitconfig gitconfig.macos gitignore hushlogin bin tmux.conf vimrc"
+FILES="aliases exports private zshrc gitconfig gitconfig.macos gitignore hushlogin bin tmux.conf vimrc"
 
 # ----------------------------------------------------------------------
 # create the private file first, will be symlinked but ignored by git

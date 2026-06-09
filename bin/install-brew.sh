@@ -3,14 +3,11 @@
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-if [[ $(uname -m) == 'arm64' ]]; then
-  PATH_HOMEBREW=/opt/homebrew
-else
-  PATH_HOMEBREW=/usr/local
-fi
+# Make `brew` available on PATH for the rest of this script
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install what we need
-$PATH_HOMEBREW/bin/brew install \
+brew install \
     coreutils \
     zsh \
     zsh-syntax-highlighting \
@@ -31,4 +28,4 @@ $PATH_HOMEBREW/bin/brew install \
     clamav
 
 # Remove outdated versions from the cellar.
-$PATH_HOMEBREW/bin/brew cleanup
+brew cleanup

@@ -21,14 +21,8 @@ export BUNPATH=$HOME/.bun
 path_parts=("$HOME/.bin" "$HOME/.local/bin")
 
 if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
-  # Homebrew path differs between Intel/Apple Silicon
-  # Hardcoded paths because `brew --prefix ...` is slow
-  if [[ $(uname -m) == 'arm64' ]]; then
-    PATH_HOMEBREW=/opt/homebrew
-  else
-    PATH_HOMEBREW=/usr/local
-  fi
-  export PATH_HOMEBREW
+  # Hardcoded to skip the ~15ms `brew` subprocess at every shell startup
+  export PATH_HOMEBREW=/opt/homebrew
 
   path_parts+=(
     "$PATH_HOMEBREW/bin"

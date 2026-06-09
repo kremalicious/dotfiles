@@ -45,17 +45,29 @@ export PATH
 export CDPATH=$CDPATH:~/Code
 
 # ---------------------------------------------------
-#  nvm
+#  nvm (lazy-loaded to keep shell startup fast)
 # ---------------------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Sourcing nvm.sh costs ~200ms, so defer it until nvm/node/npm/npx is first
+# called, or until we enter a directory tree containing an .nvmrc file.
+_nvm_load() {
+  unset -f nvm node npm npx _nvm_load 2>/dev/null
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  # hand directory-based switching over to the real hook now that nvm is loaded
+  add-zsh-hook -d chpwd _nvm_autoload
+  add-zsh-hook chpwd load-nvmrc
+}
+
+nvm()  { _nvm_load; nvm "$@"; }
+node() { _nvm_load; node "$@"; }
+npm()  { _nvm_load; npm "$@"; }
+npx()  { _nvm_load; npx "$@"; }
 
 # Calling nvm use automatically in a directory with a .nvmrc file
 # https://github.com/nvm-sh/nvm#zsh
-autoload -U add-zsh-hook
-
 load-nvmrc() {
   local nvmrc_path
   nvmrc_path="$(nvm_find_nvmrc)"
@@ -75,8 +87,21 @@ load-nvmrc() {
   fi
 }
 
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# Cheap walk-up check (no nvm required) that loads nvm only when an .nvmrc is
+# present, then runs the real switcher. Preserves auto-switching on cd.
+autoload -U add-zsh-hook
+_nvm_autoload() {
+  local dir=$PWD
+  while [ -n "$dir" ] && [ ! -f "$dir/.nvmrc" ]; do
+    dir=${dir%/*}
+  done
+  if [ -n "$dir" ]; then
+    _nvm_load
+    load-nvmrc
+  fi
+}
+add-zsh-hook chpwd _nvm_autoload
+_nvm_autoload
 
 # ---------------------------------------------------
 #  Python
@@ -84,5 +109,3 @@ load-nvmrc
 
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
-# cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache

@@ -44,4 +44,4 @@ git pull
 | `colors.sh`            | print out all available colors with their values in the Terminal                                                                                       |
 | `tor.sh`               | start Tor and switch the system-wide proxy settings in macOS. [More info](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)                      |
 | `updaterepos.sh`       | recursively updates all git repositories within the given folder                                                                                       |
-| `update-everything.sh` | update macOS, Mac App Store apps, Homebrew packages, (global) npm packages, Ruby via rvm, and refresh GPG keys all in one command. Aliased to `update` |
+| `update-everything.sh` | update system tools. Aliased to `update` |

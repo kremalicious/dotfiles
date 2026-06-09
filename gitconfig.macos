@@ -2,5 +2,4 @@
 # Included by gitconfig on macOS
 
 [credential]
-    helper = osxkeychain
-
+  helper = osxkeychain

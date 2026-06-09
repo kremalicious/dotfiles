@@ -4,7 +4,6 @@
 # Prompt
 # https://github.com/sindresorhus/pure
 #
-stty sane
 autoload -U promptinit; promptinit
 PURE_GIT_DOWN_ARROW=↓
 PURE_GIT_UP_ARROW=↑

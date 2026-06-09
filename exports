@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # OS detection for cross-platform support
 UNAME_SYSTEM=$(uname -s); export UNAME_SYSTEM
 

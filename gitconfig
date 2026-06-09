@@ -10,49 +10,48 @@
 [user]
 	name = Matthias Kretschmann
 	email = m@kretschmann.io
-    signingKey = BD3C1F3EDD7831FC
+  signingKey = BD3C1F3EDD7831FC
 
 [commit]
-    gpgSign = true
+  gpgSign = true
 
 [github]
-    user = kremalicious
+  user = kremalicious
 
 [core]
-    excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 	quotepath = false
 
-    # Handle umlauts and such better on macOS
-    #   for whatever crazy reason this explicitly
-    #   has to be set to false so tracked files with
-    #   special characters don't get treated as untracked
-    precomposeunicode = false
+  # Handle umlauts and such better on macOS
+  #   for whatever crazy reason this explicitly
+  #   has to be set to false so tracked files with
+  #   special characters don't get treated as untracked
+  precomposeunicode = false
 
-    # Make `git rebase` safer on macOS
-    # More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
-    trustctime = false
+  # Make `git rebase` safer on macOS
+  # More info: http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+  trustctime = false
 
-    # Be case sensitive on case insensitive systems
+  # Be case sensitive on case insensitive systems
 	ignorecase = false
 
 [alias]
-    c  = clone --recursive
-    co = checkout
-    l  = log --oneline --decorate -15
-    lo = log --oneline --decorate
-    s  = status -s
+  c  = clone --recursive
+  co = checkout
+  l  = log --oneline --decorate -15
+  lo = log --oneline --decorate
+  s  = status -s
 
-    # Amend the currently staged files to the latest commit
-    amend = commit --amend --reuse-message=HEAD
+  # Amend the currently staged files to the latest commit
+  amend = commit --amend --reuse-message=HEAD
 
-    # Remove branches that have already been merged with master
-    # a.k.a. ‘delete merged’
-    dm = "!git branch --merged main | grep -v '\\* main' | xargs -n 1 git branch -d"
-    dma = "!git branch --merged master | grep -v '\\* master' | xargs -n 1 git branch -d"
-    
-    uncommit = reset --soft HEAD^
-    unstage  = reset HEAD
-    yolo     = push --force
+  # Remove branches that have already been merged with master
+  # a.k.a. ‘delete merged’
+  dm = "!git branch --merged main | grep -v '\\* main' | xargs -n 1 git branch -d"
+
+  uncommit = reset --soft HEAD^
+  unstage  = reset HEAD
+  yolo     = push --force
 
 [fetch]
 	prune = true
@@ -62,20 +61,20 @@
 	ff = only
 
 [rebase]
-    autoStash = true
+  autoStash = true
 
 [init]
 	defaultBranch = main
 
 [status]
-    showUntrackedFiles = all
+  showUntrackedFiles = all
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
 
 [filter "lfs"]
 	required = true
@@ -86,4 +85,4 @@
 # Include macOS-specific config (credential helper, diff/merge tools)
 # Silently ignored if file doesn't exist
 [include]
-    path = ~/.gitconfig.macos
+  path = ~/.gitconfig.macos

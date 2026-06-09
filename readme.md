@@ -34,14 +34,17 @@ Will update the symlinked dotfiles, useful if new dotfiles have been added:
 
 ```bash
 git pull
-./bin/update-dotfiles.sh
+./bin/symlink-dotfiles.sh
 ```
 
 ## Custom scripts
 
 | Script                 | Description                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `backup.sh`            | full-disk rsync backup to another volume, made bootable. Excludes everything in `bin/.backupignore`                                                     |
+| `cloudflare-dyndns.sh` | update Cloudflare DNS A/AAAA records with the currently detected public IP                                                                              |
 | `colors.sh`            | print out all available colors with their values in the Terminal                                                                                       |
+| `offline-site.sh`      | mirror a whole website for offline browsing with wget                                                                                                  |
 | `tor.sh`               | start Tor and switch the system-wide proxy settings in macOS. [More info](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)                      |
 | `updaterepos.sh`       | recursively updates all git repositories within the given folder                                                                                       |
 | `update-everything.sh` | update system tools. Aliased to `update` |

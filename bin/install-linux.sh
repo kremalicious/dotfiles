@@ -7,45 +7,30 @@ set -e
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Minimal list of files for Linux
-FILES="aliases exports zshrc gitconfig gitignore vimrc"
-
-cd "$DOTFILES_DIR"
-
 echo "Installing dotfiles..."
 echo "---------------------------------------------"
 
-for FILE in $FILES; do
-    # remove old symlinks if present
-    if [ -h "$HOME/.$FILE" ]; then
-        rm "$HOME/.$FILE"
-        echo "✓ Removed old symlink to $FILE"
-    fi
-
-    # remove regular files too (in case they exist)
-    if [ -f "$HOME/.$FILE" ]; then
-        rm "$HOME/.$FILE"
-        echo "✓ Removed old file $FILE"
-    fi
-
-    # symlink files
-    ln -s "$DOTFILES_DIR/$FILE" "$HOME/.$FILE"
-    echo "✓ Created new symlink to $FILE"
-done
+# Minimal list of files for Linux
+FILES="aliases exports zshrc gitconfig gitignore vimrc" \
+    "$DOTFILES_DIR/bin/symlink-dotfiles.sh"
 
 # ----------------------------------------------------------------------
-# Install Pure prompt (try npm, then bun)
+# Install Pure prompt, picked up via fpath in zshrc
+# https://github.com/sindresorhus/pure#manually
 # ----------------------------------------------------------------------
 
 echo "---------------------------------------------"
 echo "Installing Pure prompt..."
 
-if command -v npm >/dev/null 2>&1; then
-    npm install --global pure-prompt && echo "✓ Installed pure-prompt via npm" || echo "⚠ Failed to install pure-prompt via npm"
-elif command -v bun >/dev/null 2>&1; then
-    bun install --global pure-prompt && echo "✓ Installed pure-prompt via bun" || echo "⚠ Failed to install pure-prompt via bun"
+PURE_DIR="$HOME/.zsh/pure"
+
+if [ -d "$PURE_DIR/.git" ]; then
+    (cd "$PURE_DIR" && git pull --quiet)
+    echo "✓ Updated Pure prompt in $PURE_DIR"
 else
-    echo "⚠ Neither npm nor bun found, skipping pure-prompt install"
+    mkdir -p "$HOME/.zsh"
+    git clone --quiet https://github.com/sindresorhus/pure.git "$PURE_DIR"
+    echo "✓ Installed Pure prompt to $PURE_DIR"
 fi
 
 # ----------------------------------------------------------------------

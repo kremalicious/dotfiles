@@ -2,15 +2,10 @@
 # Le Git Config
 ########################################################################
 
-# Values coming from environment variables set in private file
-# [user]
-#     email =
-#     name =
-
 [user]
   name = Matthias Kretschmann
   email = m@kretschmann.io
-  signingKey = BD3C1F3EDD7831FC
+  signingKey = 0xDD7831FC
 
 [commit]
   gpgSign = true
@@ -45,9 +40,9 @@
   # Amend the currently staged files to the latest commit
   amend = commit --amend --reuse-message=HEAD
 
-  # Remove branches that have already been merged with master
+  # Remove local branches that have already been merged into main
   # a.k.a. ‘delete merged’
-  dm = "!git branch --merged main | grep -v '\\* main' | xargs -n 1 git branch -d"
+  dm = "!git branch --merged main --format '%(refname:short)' | grep -vx main | xargs -n 1 git branch -d"
 
   uncommit = reset --soft HEAD^
   unstage  = reset HEAD
@@ -58,7 +53,6 @@
 
 [pull]
   rebase = true
-  ff = only
 
 [rebase]
   autoStash = true
@@ -68,13 +62,6 @@
 
 [status]
   showUntrackedFiles = all
-
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = auto
 
 [filter "lfs"]
   required = true

@@ -4,6 +4,8 @@
 # Prompt
 # https://github.com/sindresorhus/pure
 #
+# installed via Homebrew on macOS, via git clone on Linux (install-linux.sh)
+[ -d "$HOME/.zsh/pure" ] && fpath+=("$HOME/.zsh/pure")
 autoload -U promptinit; promptinit
 # promptinit registers a prompt_<theme>_setup stub for every theme in fpath
 if whence prompt_pure_setup > /dev/null; then

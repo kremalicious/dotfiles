@@ -14,8 +14,8 @@ alias dc="docker compose"
 
 # IP addresses
 # https://unix.stackexchange.com/a/81699/37512
-alias ip="dig @resolver4.opendns.com myip.opendns.com +short"
-alias ip6="dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6"
+alias myip="dig @resolver4.opendns.com myip.opendns.com +short"
+alias myip6="dig @resolver1.ipv6-sandbox.opendns.com AAAA myip.opendns.com +short -6"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -35,10 +35,15 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
   alias iplocal="ipconfig getifaddr en0"
 
   # Copy SSH public key to pasteboard
-  alias pubkey='more ~/.ssh/id_ed25519.pub | pbcopy | printf "✓ Public SSH key copied to pasteboard.\n"'
+  alias pubkey='pbcopy < ~/.ssh/id_ed25519.pub && printf "✓ Public SSH key copied to pasteboard.\n"'
 
   # Copy GPG public key to pasteboard
-  alias gpgpubkey='gpg --export --armor $GPG_KEY_ID | pbcopy | printf "✓ Public GPG key copied to pasteboard.\n"'
+  gpgpubkey() {
+    local key
+    key=$(gpg --export --armor "$GPG_KEY_ID")
+    [ -n "$key" ] || { echo "No public key found for $GPG_KEY_ID" >&2; return 1; }
+    printf '%s\n' "$key" | pbcopy && printf "✓ Public GPG key copied to pasteboard.\n"
+  }
 
   # Empty the Trash on all mounted volumes and the main HDD
   # Also, clear Apple's System Logs to improve shell startup speed

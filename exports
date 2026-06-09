@@ -12,7 +12,7 @@ GPG_TTY=$(tty); export GPG_TTY
 #  PATH
 # ---------------------------------------------------
 
-GOPATH=$HOME/.go
+export GOPATH=$HOME/.go
 export BUNPATH=$HOME/.bun
 
 # Common path entries (order = priority)

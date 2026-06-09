@@ -5,17 +5,16 @@
 # https://github.com/sindresorhus/pure
 #
 autoload -U promptinit; promptinit
-PURE_GIT_DOWN_ARROW=↓
-PURE_GIT_UP_ARROW=↑
-# PURE_PROMPT_SYMBOL=🦑
-prompt pure
-zstyle :prompt:pure:git:stash show yes
+# promptinit registers a prompt_<theme>_setup stub for every theme in fpath
+if whence prompt_pure_setup > /dev/null; then
+  PURE_GIT_DOWN_ARROW=↓
+  PURE_GIT_UP_ARROW=↑
+  prompt pure
+  zstyle :prompt:pure:git:stash show yes
+fi
 export CLICOLOR=1
 
-CASE_SENSITIVE="true"
-DISABLE_UPDATE_PROMPT="true"
-DISABLE_AUTO_TITLE="true"
-ENABLE_CORRECTION="true"
+setopt correct
 
 # Skip forward/back a word with opt-arrow
 bindkey '^[f' forward-word
@@ -25,14 +24,12 @@ bindkey '^[b' backward-word
 # History
 #
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
-HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=50000
-SAVEHIST=10000
+SAVEHIST=50000
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
-setopt inc_append_history
 setopt share_history
 
 #
@@ -46,18 +43,18 @@ setopt pushdminus
 #
 # Completion
 #
+# Full compinit only when the dump is older than 24h, otherwise skip the
+# security check with -C for faster startup
 autoload -Uz compinit
-
-for dump in ~/.zcompdump(N.mh+24); do
+if [ -n "$(find ~/.zcompdump -mmin -1440 2> /dev/null)" ]; then
+  compinit -C
+else
   compinit
-done
-
-compinit -C
+fi
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
 # Highlight the current autocomplete option
@@ -70,18 +67,6 @@ setopt prompt_subst
 unsetopt flow_control
 unsetopt menu_complete
 
-# Better SSH/SCP/Rsync Autocomplete
-h=()
-if [[ -r ~/.ssh/config ]]; then
-  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
-fi
-if [[ -r ~/.ssh/known_hosts ]]; then
-  h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
-fi
-if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:(ssh|scp|rsync|slogin):*' hosts $h
-fi
-
 # Source exports first (sets UNAME_SYSTEM)
 source ~/.exports
 source ~/.aliases
@@ -89,17 +74,23 @@ source ~/.aliases
 
 # macOS: Homebrew plugins and tools
 if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
-  [ -f $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
-    source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   [ -f $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
     source $PATH_HOMEBREW/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  [ -f $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+    source $PATH_HOMEBREW/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # bun completions
 [ -f "$BUNPATH/_bun" ] && source "$BUNPATH/_bun"
 
-# Scaleway CLI autocomplete
-command -v scw >/dev/null 2>&1 && eval "$(scw autocomplete script shell=zsh)"
+# Scaleway CLI autocomplete, lazy: real completion is generated on first use.
+# The sed drops scw's own `compinit` call, compinit already ran above.
+_scw() {
+  unfunction _scw
+  eval "$(scw autocomplete script shell=zsh | sed '/compinit/d')"
+  _scw "$@"
+}
+compdef _scw scw
 
 # OrbStack: command-line tools and integration
 [ -f ~/.orbstack/shell/init.zsh ] && source ~/.orbstack/shell/init.zsh

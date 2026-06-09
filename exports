@@ -24,6 +24,9 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
   # Hardcoded to skip the ~15ms `brew` subprocess at every shell startup
   export PATH_HOMEBREW=/opt/homebrew
 
+  # Silence Homebrew's environment/usage hints
+  export HOMEBREW_NO_ENV_HINTS=1
+
   path_parts+=(
     "$PATH_HOMEBREW/bin"
     "$BUNPATH/bin"

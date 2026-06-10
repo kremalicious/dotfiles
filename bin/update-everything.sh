@@ -26,25 +26,6 @@ echo "------------------------------$(tput sgr0)"
 bun update -g
 
 #
-# Node.js & npm (nvm)
-# -------------
-
-# echo ""
-# echo ""
-# echo "$(tput setaf 3) Update Node.js & npm (nvm)"
-# echo "------------------------------$(tput sgr0)"
-
-# # shellcheck source=/dev/null
-# [ -s "$HOME/.nvm" ] && . "$HOME/.nvm/nvm.sh"
-
-# # Update to latest nvm Node.js
-# nvm install node --reinstall-packages-from=node
-# nvm alias default node
-
-# # update npm itself
-# nvm install-latest-npm
-
-#
 # ClamAV
 # -------------
 

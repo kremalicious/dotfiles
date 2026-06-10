@@ -15,7 +15,7 @@ brew install \
     git \
     wget \
     gpg \
-    nvm \
+    fnm \
     pinentry-mac \
     openssl \
     tor \

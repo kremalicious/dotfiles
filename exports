@@ -42,63 +42,13 @@ export PATH
 export CDPATH=$CDPATH:~/Code
 
 # ---------------------------------------------------
-#  nvm (lazy-loaded to keep shell startup fast)
+#  Node.js via fnm
 # ---------------------------------------------------
 
-export NVM_DIR="$HOME/.nvm"
-
-# Sourcing nvm.sh costs ~200ms, so defer it until nvm/node/npm/npx is first
-# called, or until we enter a directory tree containing an .nvmrc file.
-_nvm_load() {
-  unset -f nvm node npm npx _nvm_load 2>/dev/null
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  # hand directory-based switching over to the real hook now that nvm is loaded
-  add-zsh-hook -d chpwd _nvm_autoload
-  add-zsh-hook chpwd load-nvmrc
-}
-
-nvm()  { _nvm_load; nvm "$@"; }
-node() { _nvm_load; node "$@"; }
-npm()  { _nvm_load; npm "$@"; }
-npx()  { _nvm_load; npx "$@"; }
-
-# Calling nvm use automatically in a directory with a .nvmrc file
-# https://github.com/nvm-sh/nvm#zsh
-load-nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version
-    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      nvm use
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-
-# Cheap walk-up check (no nvm required) that loads nvm only when an .nvmrc is
-# present, then runs the real switcher. Preserves auto-switching on cd.
-autoload -U add-zsh-hook
-_nvm_autoload() {
-  local dir=$PWD
-  while [ -n "$dir" ] && [ ! -f "$dir/.nvmrc" ]; do
-    dir=${dir%/*}
-  done
-  if [ -n "$dir" ]; then
-    _nvm_load
-    load-nvmrc
-  fi
-}
-add-zsh-hook chpwd _nvm_autoload
-_nvm_autoload
+# Puts the default node on PATH and auto-switches on cd into
+# directories with an .nvmrc, including parent directories
+command -v fnm > /dev/null && \
+  eval "$(fnm env --use-on-cd --version-file-strategy recursive --shell zsh)"
 
 # ---------------------------------------------------
 #  Python

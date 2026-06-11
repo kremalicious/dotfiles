@@ -24,6 +24,9 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
   # Silence Homebrew's environment/usage hints
   export HOMEBREW_NO_ENV_HINTS=1
 
+  # Make `brew bundle` commands work from anywhere
+  export HOMEBREW_BUNDLE_FILE="$HOME/Code/dotfiles/Brewfile"
+
   path_parts+=(
     "$PATH_HOMEBREW/bin"
     "$BUNPATH/bin"

@@ -37,6 +37,12 @@ git pull
 ./bin/symlink-dotfiles.sh
 ```
 
+All Homebrew packages, taps, and casks are declared in the [`Brewfile`](Brewfile) and installed by `install.sh`. After editing the Brewfile on an already set up machine, apply the changes with:
+
+```bash
+brew bundle
+```
+
 ## Custom scripts
 
 | Script                 | Description                                                                                                                                            |

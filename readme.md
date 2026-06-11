@@ -52,5 +52,4 @@ brew bundle
 | `colors.sh`            | print out all available colors with their values in the Terminal                                                                                       |
 | `offline-site.sh`      | mirror a whole website for offline browsing with wget                                                                                                  |
 | `tor.sh`               | start Tor and switch the system-wide proxy settings in macOS. [More info](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)                      |
-| `updaterepos.sh`       | recursively updates all git repositories within the given folder                                                                                       |
 | `update-everything.sh` | update system tools. Aliased to `update` |

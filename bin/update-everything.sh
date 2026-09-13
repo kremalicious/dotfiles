@@ -26,16 +26,15 @@ echo "------------------------------$(tput sgr0)"
 bun update -g
 
 #
-# ClamAV
+# Bun packages
 # -------------
 
-# echo ""
-# echo ""
-# echo "$(tput setaf 3) Update ClamAV Database"
-# echo "------------------------------$(tput sgr0)"
+echo ""
+echo ""
+echo "$(tput setaf 3) Update Global Skills"
+echo "------------------------------$(tput sgr0)"
 
-# freshclam -v
-
+bunx skills update -g -y
 
 #
 # GPG

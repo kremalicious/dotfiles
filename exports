@@ -29,6 +29,7 @@ if [[ "$UNAME_SYSTEM" == "Darwin" ]]; then
 
   path_parts+=(
     "$PATH_HOMEBREW/bin"
+    "$PATH_HOMEBREW/sbin"
     "$BUNPATH/bin"
     "$GOPATH/bin"
     # unversioned python/pip for convenience

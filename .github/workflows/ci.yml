@@ -14,3 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: bash -c 'shopt -s globstar; shellcheck **/*.sh'
+      - run: timeout 60 bash tests/git-nuke.sh

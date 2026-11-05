@@ -44,6 +44,8 @@
   # a.k.a. ‘delete merged’
   dm = "!git branch --merged main --format '%(refname:short)' | grep -vx main | xargs -n 1 git branch -d"
 
+  nuke = "!bash \"$HOME/.bin/git-nuke.sh\""
+
   uncommit = reset --soft HEAD^
   unstage  = reset HEAD
   yolo     = push --force

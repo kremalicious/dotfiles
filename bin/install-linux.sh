@@ -11,7 +11,7 @@ echo "Installing dotfiles..."
 echo "---------------------------------------------"
 
 # Minimal list of files for Linux
-FILES="aliases exports zshrc gitconfig gitignore vimrc" \
+FILES="aliases exports zshrc gitconfig gitignore vimrc bin" \
     "$DOTFILES_DIR/bin/symlink-dotfiles.sh"
 
 # ----------------------------------------------------------------------

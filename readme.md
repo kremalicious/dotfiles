@@ -50,6 +50,7 @@ brew bundle
 | `backup.sh`            | full-disk rsync backup to another volume, made bootable. Excludes everything in `bin/.backupignore`                                                     |
 | `cloudflare-dyndns.sh` | update Cloudflare DNS A/AAAA records with the currently detected public IP                                                                              |
 | `colors.sh`            | print out all available colors with their values in the Terminal                                                                                       |
+| `git-nuke.sh`          | remove linked worktrees and local branches except `main` after confirmation. Aliased to `git nuke` |
 | `offline-site.sh`      | mirror a whole website for offline browsing with wget                                                                                                  |
 | `tor.sh`               | start Tor and switch the system-wide proxy settings in macOS. [More info](https://kremalicious.com/simple-tor-setup-on-mac-os-x/)                      |
 | `update-everything.sh` | update system tools. Aliased to `update` |
